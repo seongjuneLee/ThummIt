@@ -232,6 +232,8 @@
 		6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileManager.swift; sourceTree = "<group>"; };
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		6ECA819A25A6CF9D00400BB9 /* MoreProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreProjectViewController.h; sourceTree = "<group>"; };
+		6ECA819B25A6CF9D00400BB9 /* MoreProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreProjectViewController.m; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				6E8E79DF25921D180008C5FF /* ProjectTableController */,
 				6E8E79C925921C830008C5FF /* ProjectViewController.h */,
 				6E8E79CA25921C830008C5FF /* ProjectViewController.m */,
+				6ECA819C25A6CFD600400BB9 /* MoreProjectVC */,
 			);
 			path = ProjectVC;
 			sourceTree = "<group>";
@@ -787,6 +790,15 @@
 				6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */,
 			);
 			path = NSDate;
+			sourceTree = "<group>";
+		};
+		6ECA819C25A6CFD600400BB9 /* MoreProjectVC */ = {
+			isa = PBXGroup;
+			children = (
+				6ECA819A25A6CF9D00400BB9 /* MoreProjectViewController.h */,
+				6ECA819B25A6CF9D00400BB9 /* MoreProjectViewController.m */,
+			);
+			path = MoreProjectVC;
 			sourceTree = "<group>";
 		};
 		6EDE19ED258A277F001FC1DA /* HomeCollectionController */ = {
