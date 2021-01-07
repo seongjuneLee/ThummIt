@@ -40,9 +40,11 @@
     PhotoFrame *firstPhotoFrame = [BasicCircle basicCircle];
     PhotoFrame *secondPhotoFrame = [BasicCircle basicCircle];
     
-    firstPhotoFrame.center = CGPointMake(0.32, 0.5);
-    secondPhotoFrame.center = CGPointMake(0.68, 0.5);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.32, 0.5);
+    firstPhotoFrame.isTemplateItem = true;
+    secondPhotoFrame.relativeCenter = CGPointMake(0.68, 0.5);
     secondPhotoFrame.scale = 0.9;
+    secondPhotoFrame.isTemplateItem = true;
     
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
@@ -50,11 +52,5 @@
     
 }
 
--(void)centerLabel:(PhotoFrame *)photoFrame withSizeDelta:(float)delta{
-    
-    photoFrame.plusLabel.frameX -= delta/2;
-    photoFrame.plusLabel.frameY -= delta/2;
-    
-}
 
 @end

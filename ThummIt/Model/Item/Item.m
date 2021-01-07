@@ -16,6 +16,7 @@
     if (self) {
         self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
         self.baseView.clipsToBounds = true;
+        self.scale = 1.0;
     }
     return self;
     
@@ -28,14 +29,15 @@
     copiedBaseView.backgroundColor = self.baseView.backgroundColor;
     copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
     copied.baseView = copiedBaseView;
-    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.imageView.frame];
-    copiedImageView.image = [self.imageView.image copy];
-    copied.imageView = copiedImageView;
-    copiedImageView.contentMode = self.imageView.contentMode;
+    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
+    copiedImageView.image = [self.photoImageView.image copy];
+    copied.photoImageView = copiedImageView;
+    copiedImageView.contentMode = self.photoImageView.contentMode;
     copied.itemName = [NSString stringWithString:self.itemName];
-    
-    [copied.baseView addSubview:copied.imageView];
-    copied.center = self.center;
+    [copied.baseView addSubview:copied.photoImageView];
+    copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
+    copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+    [copied.baseView addSubview:copied.backgroundImageView];
     copied.rotationDegree = self.rotationDegree;
     copied.scale = self.scale;
     copied.imageViewCenter = self.imageViewCenter;
@@ -53,6 +55,12 @@
         self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
         self.baseView.clipsToBounds = true;
         
+        self.backgroundImageView = [decoder decodeObjectForKey:@"backgroundImageView"];
+        self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
+        self.backgroundImageView.clipsToBounds = true;
+        self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
+        self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
         
         NSString *phAssetLocalIdentifier = [decoder decodeObjectForKey:@"localIdentifier"];
@@ -61,21 +69,14 @@
                 self.phAsset = phAsset;
             }
         }
-        self.imageView = [decoder decodeObjectForKey:@"imageView"];
+        self.photoImageView = [decoder decodeObjectForKey:@"photoImageView"];
         
         NSString *imageURL = [decoder decodeObjectForKey:@"imageURL"];
         if (imageURL.length) {
             NSData *data = [[NSData alloc]initWithBase64EncodedString:imageURL options:NSDataBase64DecodingIgnoreUnknownCharacters];
-            self.imageView.image = [UIImage imageWithData:data];
+            self.photoImageView.image = [UIImage imageWithData:data];
         }
         
-        self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
-        self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
-        self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
-        self.imageViewCenter = [[decoder decodeObjectForKey:@"imageViewCenter"] CGPointValue];
-        self.imageViewScale = [[decoder decodeObjectForKey:@"imageViewScale"] floatValue];
-        self.imageViewRotationDegree = [[decoder decodeObjectForKey:@"imageViewRotationDegree"] floatValue];
-
     }
     return self;
 }
@@ -84,17 +85,12 @@
 
     [encoder encodeObject:self.baseView forKey:@"baseView"];
     [encoder encodeObject:self.itemName forKey:@"itemName"];
+    [encoder encodeObject:self.backgroundImageView forKey:@"backgroundImageView"];
+    [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
-    NSString *imageURL = [UIImagePNGRepresentation(self.imageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    [encoder encodeObject:self.imageView forKey:@"imageView"];
+    NSString *imageURL = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    [encoder encodeObject:self.photoImageView forKey:@"photoImageView"];
     [encoder encodeObject:imageURL forKey:@"imageURL"];
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.center] forKey:@"center"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotation"];
-    
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.imageViewCenter] forKey:@"imageViewCenter"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.imageViewScale] forKey:@"imageViewScale"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.imageViewRotationDegree] forKey:@"imageViewRotationDegree"];
     
 
 }

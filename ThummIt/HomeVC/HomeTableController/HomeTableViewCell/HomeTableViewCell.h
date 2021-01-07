@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol HomeTableViewCellDelegate <NSObject>
 
 -(void)didSelectItemWithCell:(UITableViewCell *)cell withCollectionViewIndex:(NSUInteger)index;
+-(NSIndexPath *)getTableViewIndexPath:(UITableViewCell *)cell;
 
 @end
 @interface HomeTableViewCell : UITableViewCell

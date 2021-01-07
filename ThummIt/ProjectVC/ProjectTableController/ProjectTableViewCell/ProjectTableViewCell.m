@@ -29,9 +29,9 @@
     
 }
 
-- (IBAction)moreButtonTapped:(id)sender {
+- (IBAction)moreButtonTapped:(UIButton *)sender {
     
-    
+    [self.delegate moreButtonTappedWithIndex:sender.tag];
     
 }
 

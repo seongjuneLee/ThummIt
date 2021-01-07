@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (IBAction)leftItemTapped:(id)sender;
 - (IBAction)rightItemTapped:(id)sender;
+- (IBAction)photoFrameButtonTapped:(id)sender;
 
 @end
 

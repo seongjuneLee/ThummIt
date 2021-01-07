@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "PhotoManager.h"
+#import "ProjectManager.h"
 #import "ThummIt-Swift.h"
 @interface AppDelegate ()
 
@@ -19,8 +20,8 @@
     // Override point for customization after application launch.
     [MigratorJul.shared migrateIfNeeded];
     
-    [PhotoManager.sharedInstance fetchPhassets];
-
+    [ProjectManager.sharedInstance setUpSnapShotFromProject];
+    
     return YES;
 }
 

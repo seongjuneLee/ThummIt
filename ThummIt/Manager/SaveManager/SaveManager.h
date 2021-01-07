@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (SaveManager *)sharedInstance;
 
 @property (strong, nonatomic) Project *currentProject;
+@property dispatch_queue_t savingQueue;
 
 -(Template *)currentTemplate;
 -(void)save;

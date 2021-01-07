@@ -30,22 +30,22 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    self.currentTemplates = [NSMutableArray array];
-    
-    for (Template *template in TemplateManager.sharedInstance.templates) {
-        if ([template.category isEqualToString:self.currentCategory]) {
-            [self.currentTemplates addObject:template];
-        }
-    }
+    HomeTableViewCell *parentCell = (HomeTableViewCell *)collectionView.superview.superview;
+    NSArray *templates = TemplateManager.sharedInstance.templateDatas[parentCell.tag];
+    return templates.count;
 
-    return self.currentTemplates.count;
-    
 }
 
--(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    UIView *contentView = collectionView.superview;
+    HomeTableViewCell *parentCell = (HomeTableViewCell *)contentView.superview;
+    NSUInteger cellTag = parentCell.tag;
+    
+    NSArray *currentTemplates = TemplateManager.sharedInstance.templateDatas[cellTag];
     HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
-    Template *template = self.currentTemplates[indexPath.item];
+    Template *template = currentTemplates[indexPath.row];
+
     cell.previewImageView.image = [UIImage imageNamed:template.previewImageName];
     
     return cell;

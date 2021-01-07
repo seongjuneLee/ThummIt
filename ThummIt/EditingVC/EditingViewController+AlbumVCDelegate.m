@@ -15,13 +15,14 @@
     if (!self.originalPhotoFrameImage) {
         self.selectedItem.phAsset = selectedPHAsset;
     }
-    self.selectedItem.imageView.center = CGPointMake(self.selectedItem.baseView.frameWidth/2, self.selectedItem.baseView.frameHeight/2);
+    self.selectedItem.photoImageView.frameOrigin = CGPointMake(0,0);
 
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        self.selectedItem.imageView.image = image;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.selectedItem.photoImageView.image = image;
+        });
     }];
-    NSLog(@"savemanager.sharedinstance.currentproject items %@",SaveManager.sharedInstance.currentProject.items);
-    NSLog(@"coredataproejct %@",SaveManager.sharedInstance.currentProject.coreDataStorage);
+    
 }
 
 @end

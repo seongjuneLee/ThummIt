@@ -11,16 +11,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EditingLayerController : NSObject
 
-@property (weak, nonatomic) UIView *view;
-@property (weak, nonatomic) UIView *gestureView;
-@property (weak, nonatomic) UIImageView *imageView;
+@property (weak, nonatomic) UIViewController *editingVC;
+
 @property (strong, nonatomic, nullable) UIView *transparentView;
 @property (nonatomic) NSUInteger originalIndex;
 
-@property (weak, nonatomic) Item *selectedItem;
+@property (strong, nonatomic) Item *selectedItem;
 
 
--(void)setUpWithSelectedItem:(Item *)selectedItem;
+-(void)bringSelectedItemToFront:(Item *)selectedItem;
 -(void)recoverOriginalLayer;
 
 @end

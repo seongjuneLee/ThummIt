@@ -16,8 +16,6 @@
 
 @property (strong, nonatomic) HomeTableController *homeTableController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)testContinue:(id)sender;
-
 
 @end
 

@@ -12,6 +12,7 @@
 #import "PhotoFrameHeader.h"
 
 #import "CircleTemplate.h"
+#import "ChristmasCircleTemplate.h"
 #import "DoubleCircleTemplate.h"
 
 #import "TwoDivisionTemplate.h"

@@ -6,8 +6,9 @@
 //
 
 #import "EditingModeController.h"
+#import "EditingViewController.h"
 
-@implementation EditingModeController
+@implementation EditingModeController // 네비게이션 바 아이템들에 대한 컨트롤만.
 
 -(id)init{
     
@@ -20,22 +21,34 @@
 }
 
 -(void)setUpEditingMode:(EditingMode)editingMode{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     self.editingMode = editingMode;
     if (self.editingMode == NormalMode) {
-        [self.leftItem setImage:[UIImage imageNamed:@"closeButton"] forState:UIControlStateNormal];
-        [UIView transitionWithView:self.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        [editingVC.leftItem setImage:[UIImage imageNamed:@"closeButton"] forState:UIControlStateNormal];
+        [UIView transitionWithView:editingVC.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
             
-            [self.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
+            [editingVC.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
         } completion:nil];
-        self.leftItemWidthConstraint.constant = 25;
-        [self.rightItem setTitle:NSLocalizedString(@"Export", nil) forState:UIControlStateNormal];
-    } else if (self.editingMode == EditingItemMode){
-        [self.leftItem setImage:nil forState:UIControlStateNormal];
-        [UIView transitionWithView:self.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
-            [self.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
+        editingVC.leftItemWidthConstraint.constant = 25;
+        [editingVC.rightItem setTitle:NSLocalizedString(@"Export", nil) forState:UIControlStateNormal];
+    } else if (self.editingMode == AddPhotoFrameMode){
+        
+        [editingVC.leftItem setImage:nil forState:UIControlStateNormal];
+        [UIView transitionWithView:editingVC.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+            
+            [editingVC.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
         } completion:nil];
-        self.leftItemWidthConstraint.constant = 60;
-        [self.rightItem setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
+        editingVC.leftItemWidthConstraint.constant = 60;
+        [editingVC.rightItem setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
+
+    }else if (self.editingMode == EditingPhotoFrameMode){
+        [editingVC.leftItem setImage:nil forState:UIControlStateNormal];
+        [UIView transitionWithView:editingVC.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+            [editingVC.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
+        } completion:nil];
+        editingVC.leftItemWidthConstraint.constant = 60;
+        [editingVC.rightItem setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
     }
     
 }

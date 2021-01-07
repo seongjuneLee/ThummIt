@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(NSMutableArray *)items;
+-(void)centerLabel:(PhotoFrame *)photoFrame withSizeDelta:(float)delta;
+
 @end
 
 NS_ASSUME_NONNULL_END
