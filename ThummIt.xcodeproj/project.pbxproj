@@ -45,6 +45,7 @@
 		6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E79EA25921E440008C5FF /* ProjectTableViewCell.m */; };
 		6E8E79ED25921E440008C5FF /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E79EB25921E440008C5FF /* ProjectTableViewCell.xib */; };
 		6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E79F9259237B80008C5FF /* UIImage+Additions.m */; };
+		6E94CD71259B4BD50022191E /* MoreProjectTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E94CD70259B4BD50022191E /* MoreProjectTableController.m */; };
 		6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7A23259B26CF0008C5FF /* ItemCollectionViewController.m */; };
 		6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7A2D259B270E0008C5FF /* PhotoFrameCollectionController.m */; };
 		6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7A37259B2EA40008C5FF /* ItemManager.m */; };
@@ -77,6 +78,9 @@
 		6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */; };
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
+		6ECA815A259A5E1900400BB9 /* MoreProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA8156259A5DFD00400BB9 /* MoreProjectViewController.m */; };
+		6ECA8174259B50DF00400BB9 /* MoreProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA8172259B50DF00400BB9 /* MoreProjectTableViewCell.m */; };
+		6ECA8175259B50DF00400BB9 /* MoreProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ECA8173259B50DF00400BB9 /* MoreProjectTableViewCell.xib */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -174,6 +178,8 @@
 		6E8E79EB25921E440008C5FF /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
 		6E8E79F8259237B80008C5FF /* UIImage+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		6E8E79F9259237B80008C5FF /* UIImage+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		6E94CD6F259B4BD50022191E /* MoreProjectTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreProjectTableController.h; sourceTree = "<group>"; };
+		6E94CD70259B4BD50022191E /* MoreProjectTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreProjectTableController.m; sourceTree = "<group>"; };
 		6E8E7A22259B26CF0008C5FF /* ItemCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewController.h; sourceTree = "<group>"; };
 		6E8E7A23259B26CF0008C5FF /* ItemCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewController.m; sourceTree = "<group>"; };
 		6E8E7A2C259B270E0008C5FF /* PhotoFrameCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoFrameCollectionController.h; sourceTree = "<group>"; };
@@ -232,6 +238,11 @@
 		6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileManager.swift; sourceTree = "<group>"; };
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		6ECA8155259A5DFD00400BB9 /* MoreProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreProjectViewController.h; sourceTree = "<group>"; };
+		6ECA8156259A5DFD00400BB9 /* MoreProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreProjectViewController.m; sourceTree = "<group>"; };
+		6ECA8171259B50DF00400BB9 /* MoreProjectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreProjectTableViewCell.h; sourceTree = "<group>"; };
+		6ECA8172259B50DF00400BB9 /* MoreProjectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreProjectTableViewCell.m; sourceTree = "<group>"; };
+		6ECA8173259B50DF00400BB9 /* MoreProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreProjectTableViewCell.xib; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -291,8 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
-				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
+				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
@@ -560,6 +571,7 @@
 				6E8E79DF25921D180008C5FF /* ProjectTableController */,
 				6E8E79C925921C830008C5FF /* ProjectViewController.h */,
 				6E8E79CA25921C830008C5FF /* ProjectViewController.m */,
+				6ECA8161259A5ECA00400BB9 /* MoreProjectVC */,
 			);
 			path = ProjectVC;
 			sourceTree = "<group>";
@@ -593,6 +605,25 @@
 			path = UIImage;
 			sourceTree = "<group>";
 		};
+		6E94CD6E259B2BC40022191E /* MoreProjectTableController */ = {
+			isa = PBXGroup;
+			children = (
+				6E94CD6F259B4BD50022191E /* MoreProjectTableController.h */,
+				6E94CD70259B4BD50022191E /* MoreProjectTableController.m */,
+				6E94CD75259B4DC30022191E /* MoreProjectTableViewCell */,
+			);
+			path = MoreProjectTableController;
+			sourceTree = "<group>";
+		};
+		6E94CD75259B4DC30022191E /* MoreProjectTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6ECA8171259B50DF00400BB9 /* MoreProjectTableViewCell.h */,
+				6ECA8172259B50DF00400BB9 /* MoreProjectTableViewCell.m */,
+				6ECA8173259B50DF00400BB9 /* MoreProjectTableViewCell.xib */,
+			);
+			path = MoreProjectTableViewCell;
+
 		6E8E7A28259B26D70008C5FF /* ItemCollectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,6 +820,16 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
+		6ECA8161259A5ECA00400BB9 /* MoreProjectVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E94CD6E259B2BC40022191E /* MoreProjectTableController */,
+				6ECA8155259A5DFD00400BB9 /* MoreProjectViewController.h */,
+				6ECA8156259A5DFD00400BB9 /* MoreProjectViewController.m */,
+			);
+			path = MoreProjectVC;
+			sourceTree = "<group>";
+		};
 		6EDE19ED258A277F001FC1DA /* HomeCollectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +953,7 @@
 				6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */,
 				6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */,
 				6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */,
+				6ECA8175259B50DF00400BB9 /* MoreProjectTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +998,7 @@
 				6E7DD4F32587B2E10014618E /* ImageManager.m in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
+				6E94CD71259B4BD50022191E /* MoreProjectTableController.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */,
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
@@ -965,6 +1008,7 @@
 				6E1190F72584B164000DD9C0 /* main.m in Sources */,
 				6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
+				6ECA815A259A5E1900400BB9 /* MoreProjectViewController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
@@ -994,6 +1038,7 @@
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
 				6E4A184B2588C99D008578BA /* BasicCircle.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
+				6ECA8174259B50DF00400BB9 /* MoreProjectTableViewCell.m in Sources */,
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
