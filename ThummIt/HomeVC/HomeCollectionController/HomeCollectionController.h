@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (weak, nonatomic) UICollectionView *collectionView;
+@property (weak, nonatomic) NSIndexPath *tableViewIndexPath;
 @property (strong, nonatomic) NSString *currentCategory;
-@property (strong, nonatomic) NSMutableArray *currentTemplates;
 
 @end
 

@@ -22,7 +22,6 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"HomeTableViewCell"];
-    
     [self connectHomeTableController];
 
 }
@@ -33,6 +32,5 @@
     self.homeTableController.delegate = self;
 
 }
-
 
 @end

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ChristmasCircle : PhotoFrame
 
++(ChristmasCircle*)christmasCircle;
+
 @end
 
 NS_ASSUME_NONNULL_END

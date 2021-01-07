@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) HomeCollectionController *homeCollectionController;
 @property (weak, nonatomic) UITableView *tableView;
 
+-(NSIndexPath *)getTableViewIndex:(HomeTableViewCell *)cell;
+
 @end
 
 NS_ASSUME_NONNULL_END

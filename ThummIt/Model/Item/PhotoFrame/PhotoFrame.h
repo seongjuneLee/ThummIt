@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIButton *plusPhotoButton;
 @property (strong, nonatomic) UILabel *plusLabel;
 
-
--(void)makePhotoImageViewAndButtonWithView:(UIView *)photoFrameView;
+-(void)addSubViewsToBaseView;
+-(void)addCircleImageWithName:(NSString *)imageName;
 
 @end
 

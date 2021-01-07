@@ -24,42 +24,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    [self getSnapShotFromProject];
-    self.projectTableController.snapShots = self.projectSnapShots;
-    [self.tableView reloadData];
-
-}
-
--(void)viewWillLayoutSubviews{
-    
-    self.moreProjectVC.view.frame = self.view.frame;
-    
-}
-
--(void)getSnapShotFromProject{
-    
-    self.projectSnapShots = [NSMutableArray array];
-    NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
-    self.projectTableController.projects = [NSMutableArray arrayWithArray:projects];
-    for (Project *project in projects) {
-        
-        UIScreen *screen = UIScreen.mainScreen;
-        UIImageView *imageView = [[UIImageView alloc] init];
-        float imageViewWidth = screen.bounds.size.width;
-        imageView.frame = CGRectMake(0, 0, imageViewWidth, imageViewWidth*9/16);
-        imageView.backgroundColor = UIColor.blackColor;
-        
-        for (Item *item  in project.items) {
-            
-            Item *copiedItem = [item copy];
-            copiedItem.baseView.center = CGPointMake(item.center.x * imageView.frameWidth, item.center.y * imageView.frameHeight);
-            [imageView addSubview:copiedItem.baseView];
-            
-        }
-        
-        UIImage *snapShot = [UIImage imageWithView:imageView];
-        [self.projectSnapShots addObject:snapShot];
+    if (ProjectManager.sharedInstance.projectSnapShots.count != ProjectManager.sharedInstance.fetchedProjectsCount) { // 프로젝트 갯수에 변화가 있다.
+        [ProjectManager.sharedInstance setUpSnapShotFromProject];
     }
+    self.projectTableController.snapShots = ProjectManager.sharedInstance.projectSnapShots;
+    [self.tableView reloadData];
     
 }
 

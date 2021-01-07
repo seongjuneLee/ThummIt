@@ -39,6 +39,24 @@
     
 }
 
+-(void)getFirstPhotoFromAlbumWithContentMode:(PHImageContentMode)contentMode withSize:(CGSize)size WithCompletionBlock:(void(^)(UIImage *image))block{
+    
+    PHImageManager *manager = [PHImageManager defaultManager];
+    PHImageRequestOptions *requestOptions = [[PHImageRequestOptions alloc] init];
+    // this one is key
+    requestOptions.synchronous = YES;
+    
+    // Do something with the asset
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [manager requestImageForAsset:self.phassets.firstObject
+                           targetSize:size
+                          contentMode:contentMode
+                              options:requestOptions
+                        resultHandler:^void(UIImage *image, NSDictionary *info) {
+            block(image);
+        }];
+    });
+}
 
 -(NSMutableArray *)fetchPhassets{
     

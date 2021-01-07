@@ -37,6 +37,7 @@
     
     self.photoFrames = [NSMutableArray new];
     PhotoFrame *photoFrame = [BasicCircle basicCircle];
+    photoFrame.isTemplateItem = true;
     [self.photoFrames addObject:photoFrame];
     
     

@@ -8,6 +8,8 @@
 #import "HomeTableController.h"
 #import "CategoryManager.h"
 #import "HomeTableViewCell.h"
+#import "Template.h"
+#import "TemplateManager.h"
 
 @implementation HomeTableController
 
@@ -45,7 +47,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return CategoryManager.sharedInstance.categories.count;
+    return TemplateManager.sharedInstance.templateDatas.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -54,6 +56,7 @@
     NSString *category = CategoryManager.sharedInstance.categories[indexPath.row];
     cell.delegate = self;
     cell.categoryLabel.text = category;
+    cell.tag = indexPath.row;
     
     // homeCollectionController에 콜랙션뷰 컨트롤 맡기기.
     cell.collectionView.delegate = self.homeCollectionController;
@@ -61,9 +64,7 @@
     self.homeCollectionController.collectionView = cell.collectionView;
     self.homeCollectionController.currentCategory = category;
     [self.homeCollectionController.collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"HomeCollectionViewCell"];
-    
-    
-    
+
     return cell;
 }
 
@@ -85,6 +86,12 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];    
     [self.delegate didSelectItemAtTableIndex:indexPath.row withCollectionIndex:index];
     
+}
+
+-(NSIndexPath *)getTableViewIndexPath:(UITableViewCell *)cell{
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    return indexPath;
 }
 
 @end

@@ -21,18 +21,22 @@ typedef enum {
 @property (nonatomic) ItemType itemType;
 @property (strong ,nonatomic) UIView *baseView;
 @property (strong, nonatomic) NSString *itemName;
-@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) NSString *backgroundImageName;
+@property (strong, nonatomic) UIImageView *photoImageView;
+@property (strong, nonatomic) UIImageView *backgroundImageView;
 @property (strong, nonatomic) PHAsset *phAsset;
 
-@property (nonatomic) CGPoint center;
+@property (nonatomic) CGPoint relativeCenter;
 @property (nonatomic) NSInteger rotationDegree;
 @property (nonatomic) CGFloat scale;
 
 @property (nonatomic) CGPoint imageViewCenter;
 @property (nonatomic) NSInteger imageViewRotationDegree;
 @property (nonatomic) CGFloat imageViewScale;
+@property (nonatomic) BOOL isTemplateItem;
 
 -(void)scaleItem;
+
 
 @end
 

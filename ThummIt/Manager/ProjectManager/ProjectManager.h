@@ -14,10 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (ProjectManager *)sharedInstance;
 
+@property (strong, nonatomic) NSMutableArray *projectSnapShots;
+
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate;
 - (NSArray*)getAllProjectsFromCoreData;
 - (BOOL)deleteIdOfProject:(NSString*)projectId;
 -(NSString *)generateProjectID;
+-(NSUInteger)fetchedProjectsCount;
+-(void)setUpSnapShotFromProject;
 
 @end
 
