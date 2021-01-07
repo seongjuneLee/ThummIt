@@ -6,6 +6,7 @@
 //
 
 #import "ProjectViewController.h"
+#import "EditingViewController.h"
 #import "UIImage+Additions.h"
 @interface ProjectViewController ()
 
@@ -16,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self connectMoreProjectVC];
     [self connectProjectTableController];
 
 }
@@ -25,6 +27,12 @@
     [self getSnapShotFromProject];
     self.projectTableController.snapShots = self.projectSnapShots;
     [self.tableView reloadData];
+
+}
+
+-(void)viewWillLayoutSubviews{
+    
+    self.moreProjectVC.view.frame = self.view.frame;
     
 }
 
@@ -59,7 +67,26 @@
     
     self.projectTableController = [[ProjectTableController alloc] initWithTableView:self.tableView];
     self.projectTableController.navigationController = self.navigationController;
+    self.projectTableController.projectVC = self;
+    self.projectTableController.moreProjectVC = self.moreProjectVC;
+}
+
+-(void)connectMoreProjectVC{
+    
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+    self.moreProjectVC = (MoreProjectViewController *)[main instantiateViewControllerWithIdentifier:@"MoreProjectViewController"];
+    self.moreProjectVC.projectVC = self;
+}
+
+-(void)pushEditingVC{
+    
+    // editingVC 푸시해주기
+    UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
+    EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];
+    [self.navigationController pushViewController:editingVC animated:true];
+    NSLog(@"self.navigationController %@",self.navigationController);
     
 }
+
 
 @end

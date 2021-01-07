@@ -10,6 +10,7 @@
 #import "Project.h"
 #import "ProjectManager.h"
 #import "SaveManager.h"
+#import "MoreProjectViewController.h"
 
 @interface HomeViewController ()
 
@@ -34,28 +35,4 @@
 }
 
 
-- (IBAction)testContinue:(id)sender {
-    
-    Project *project = [ProjectManager.sharedInstance getAllProjectsFromCoreData].firstObject;
-    NSLog(@"project projectID %@",project.projectID);
-    Template *selectedTemplate;
-    
-    for (Template *template in TemplateManager.sharedInstance.templates) {
-        if ([project.selectedTemplateName isEqualToString:template.templateName]) {
-            selectedTemplate = template;
-        }
-    }
-    SaveManager.sharedInstance.currentProject = project;
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        NSLog(@"itemitemitem baseView %@",NSStringFromCGRect(item.baseView.frame));
-        NSLog(@"item %@",item);
-    }
-    
-    UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
-    EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];
-    //        editingVC.selectedTemplate = selectedTemplate;
-    [self.navigationController pushViewController:editingVC animated:true];
-//    [SaveManager.sharedInstance save];
-    
-}
 @end

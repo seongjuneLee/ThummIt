@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol ProjectTableViewCellDelegate <NSObject>
 
--(void)moreButtonTapped;
+-(void)moreButtonTappedWithIndex:(NSUInteger)index;
 
 @end
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
 
-- (IBAction)moreButtonTapped:(id)sender;
+- (IBAction)moreButtonTapped:(UIButton *)sender;
 - (IBAction)downloadButtonTapped:(id)sender;
 
 @end
