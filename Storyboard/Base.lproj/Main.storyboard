@@ -257,7 +257,7 @@
                                     </constraints>
                                 </view>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-hJ-qMX" userLabel="Sign In View">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-hJ-qMX" userLabel="Sign In View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9j-y1-zdg" userLabel="Sign In View Label">
@@ -499,15 +499,109 @@ with the design you want.</string>
             </objects>
             <point key="canvasLocation" x="1869.5652173913045" y="1125.6696428571429"/>
         </scene>
+        <!--Customer Feedback View Controller-->
+        <scene sceneID="xjt-H0-1HB">
+            <objects>
+                <viewController storyboardIdentifier="CustomerFeedbackViewController" id="ipL-39-g1V" customClass="CustomerFeedbackViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="loH-wp-ekI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n3-FX-LhK">
+                                <rect key="frame" x="10" y="66" width="25" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="9ur-UE-h1U"/>
+                                    <constraint firstAttribute="width" secondItem="5n3-FX-LhK" secondAttribute="height" multiplier="5:6" id="IPE-Au-X9j"/>
+                                </constraints>
+                                <state key="normal" image="closeButtonBlack"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="ipL-39-g1V" eventType="touchUpInside" id="laR-4t-u3N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please explain your problem." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFh-c9-qPu">
+                                <rect key="frame" x="30" y="114" width="241" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InY-9M-u9r">
+                                <rect key="frame" x="30" y="158" width="354" height="224"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYz-VI-cTn">
+                                <rect key="frame" x="30" y="422" width="354" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5w-jm-Kqs">
+                                        <rect key="frame" x="147" y="13" width="60" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJp-IS-Sex">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitButtonTapped:" destination="ipL-39-g1V" eventType="touchUpInside" id="HFN-DS-Xtq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Zu-Z6-QTU"/>
+                                    <constraint firstItem="DJp-IS-Sex" firstAttribute="width" secondItem="tYz-VI-cTn" secondAttribute="width" id="Jbj-Qe-6fV"/>
+                                    <constraint firstItem="F5w-jm-Kqs" firstAttribute="centerX" secondItem="tYz-VI-cTn" secondAttribute="centerX" id="Owe-LN-lEc"/>
+                                    <constraint firstItem="DJp-IS-Sex" firstAttribute="height" secondItem="tYz-VI-cTn" secondAttribute="height" id="Rb1-m0-hef"/>
+                                    <constraint firstItem="DJp-IS-Sex" firstAttribute="centerY" secondItem="tYz-VI-cTn" secondAttribute="centerY" id="Yu2-hJ-Qiw"/>
+                                    <constraint firstItem="DJp-IS-Sex" firstAttribute="centerX" secondItem="tYz-VI-cTn" secondAttribute="centerX" id="cFG-VQ-aj8"/>
+                                    <constraint firstItem="F5w-jm-Kqs" firstAttribute="centerY" secondItem="tYz-VI-cTn" secondAttribute="centerY" id="fGt-5q-2a9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JnE-NN-uN9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="InY-9M-u9r" firstAttribute="leading" secondItem="JnE-NN-uN9" secondAttribute="leading" constant="30" id="6BM-Ea-WL6"/>
+                            <constraint firstItem="aFh-c9-qPu" firstAttribute="top" secondItem="JnE-NN-uN9" secondAttribute="top" constant="70" id="6Cf-ow-NDo"/>
+                            <constraint firstItem="JnE-NN-uN9" firstAttribute="trailing" secondItem="InY-9M-u9r" secondAttribute="trailing" constant="30" id="780-V7-S5Z"/>
+                            <constraint firstItem="JnE-NN-uN9" firstAttribute="trailing" secondItem="tYz-VI-cTn" secondAttribute="trailing" constant="30" id="Gwe-O6-ZTP"/>
+                            <constraint firstItem="aFh-c9-qPu" firstAttribute="leading" secondItem="JnE-NN-uN9" secondAttribute="leading" constant="30" id="S29-TQ-tiI"/>
+                            <constraint firstItem="5n3-FX-LhK" firstAttribute="leading" secondItem="JnE-NN-uN9" secondAttribute="leading" constant="10" id="bvY-p4-e26"/>
+                            <constraint firstItem="InY-9M-u9r" firstAttribute="height" secondItem="loH-wp-ekI" secondAttribute="height" multiplier="0.25" id="cad-VI-6Cu"/>
+                            <constraint firstItem="tYz-VI-cTn" firstAttribute="top" secondItem="InY-9M-u9r" secondAttribute="bottom" constant="40" id="drF-rV-3yP"/>
+                            <constraint firstItem="InY-9M-u9r" firstAttribute="top" secondItem="aFh-c9-qPu" secondAttribute="bottom" constant="20" id="rWs-SU-VRr"/>
+                            <constraint firstItem="5n3-FX-LhK" firstAttribute="top" secondItem="JnE-NN-uN9" secondAttribute="top" constant="22" id="xCg-1Y-swM"/>
+                            <constraint firstItem="tYz-VI-cTn" firstAttribute="leading" secondItem="JnE-NN-uN9" secondAttribute="leading" constant="30" id="zUl-QP-JY7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="5n3-FX-LhK" id="gq0-d4-dhp"/>
+                        <outlet property="sendFeedbackTextView" destination="InY-9M-u9r" id="SeO-A2-qyY"/>
+                        <outlet property="submitView" destination="tYz-VI-cTn" id="XIv-BM-FTC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoL-w3-CIt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2735" y="1126"/>
+        </scene>
     </scenes>
     <resources>
         <image name="accountImage" width="66.666664123535156" height="66.666664123535156"/>
         <image name="appleLogo" width="200" height="200"/>
+        <image name="closeButtonBlack" width="168" height="168"/>
         <image name="continueImage" width="26.666666030883789" height="26.666666030883789"/>
         <image name="facebookLogo" width="320" height="320"/>
         <image name="googleLogo" width="341.33334350585938" height="341.33334350585938"/>
         <image name="homeTabBarImage" width="26.666666030883789" height="26.666666030883789"/>
         <image name="kakaoLogo" width="100" height="100"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

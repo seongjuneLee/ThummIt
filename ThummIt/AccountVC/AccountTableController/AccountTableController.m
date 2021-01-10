@@ -8,6 +8,9 @@
 #import "AccountTableController.h"
 #import "AccountTableViewCell.h"
 #import "AccountViewController.h"
+#import "CustomerFeedbackViewController.h"
+
+
 @implementation AccountTableController
 
 -(id)initWithTableView:(UITableView *)tableView{
@@ -67,8 +70,23 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    각 테이블이 선택되었을 때 동작 함수
-    
+    if(indexPath.row == 0){
+        
+    }else if (indexPath.row == 1){
+        
+    }else if (indexPath.row == 2){
+        
+        UIStoryboard *CustomerFeedback = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+        CustomerFeedbackViewController *CustomerFeedbackVC = (CustomerFeedbackViewController *)[CustomerFeedback instantiateViewControllerWithIdentifier:@"CustomerFeedbackViewController"];
+        [self.accountVC.navigationController pushViewController:CustomerFeedbackVC animated:true];
+        
+    }else if (indexPath.row == 3){
+        
+    }else if (indexPath.row == 4){
+        
+    }
 }
+
+
 
 @end

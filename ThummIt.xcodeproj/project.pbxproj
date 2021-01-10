@@ -85,6 +85,7 @@
 		B16D9EA725A5AFBB0099CB75 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16D9EA525A5AFBB0099CB75 /* AccountTableViewCell.m */; };
 		B16D9EA825A5AFBB0099CB75 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16D9EA625A5AFBB0099CB75 /* AccountTableViewCell.xib */; };
 		B183903925A86C6E00C62E37 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B183903825A86C6E00C62E37 /* UILabel+Additions.m */; };
+		B183905A25A9F5A100C62E37 /* CustomerFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B183905925A9F5A100C62E37 /* CustomerFeedbackViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +252,8 @@
 		B16D9EA625A5AFBB0099CB75 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		B183903725A86C6E00C62E37 /* UILabel+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
 		B183903825A86C6E00C62E37 /* UILabel+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
+		B183905825A9F5A100C62E37 /* CustomerFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerFeedbackViewController.h; sourceTree = "<group>"; };
+		B183905925A9F5A100C62E37 /* CustomerFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedbackViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,7 @@
 			children = (
 				6E4A18022588A744008578BA /* ThummIt-PrefixHeader.pch */,
 				6E9BEA4B258F1A9200F7F539 /* ThummIt-Bridging-Header.h */,
+				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E1190E32584B163000DD9C0 /* ThummIt */,
 				6E1190FF2584B165000DD9C0 /* ThummItMakerTests */,
 				6E11910A2584B165000DD9C0 /* ThummItMakerUITests */,
@@ -304,10 +308,10 @@
 		6E1190E32584B163000DD9C0 /* ThummIt */ = {
 			isa = PBXGroup;
 			children = (
+				B183904525A9F41C00C62E37 /* CustomerFeedbackVC */,
 				B16D9E9525A5AC9C0099CB75 /* AccountVC */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
-				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
@@ -862,6 +866,15 @@
 			path = UILabel;
 			sourceTree = "<group>";
 		};
+		B183904525A9F41C00C62E37 /* CustomerFeedbackVC */ = {
+			isa = PBXGroup;
+			children = (
+				B183905825A9F5A100C62E37 /* CustomerFeedbackViewController.h */,
+				B183905925A9F5A100C62E37 /* CustomerFeedbackViewController.m */,
+			);
+			path = CustomerFeedbackVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1054,6 +1067,7 @@
 				6E7DD4AE2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m in Sources */,
 				6E4A18452588C87A008578BA /* ChristmasCircle.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
+				B183905A25A9F5A100C62E37 /* CustomerFeedbackViewController.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */,
 				6E1190E92584B163000DD9C0 /* SceneDelegate.m in Sources */,
