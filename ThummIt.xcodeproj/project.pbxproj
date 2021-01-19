@@ -118,6 +118,12 @@
 		B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC67F25AF459800E854C1 /* StickerCollectionReusableView.xib */; };
 		B16FC68725AF76A600E854C1 /* BasicArrowSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */; };
 		B16FC68D25AF7F3900E854C1 /* XSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68C25AF7F3900E854C1 /* XSticker.m */; };
+		B16D9E9825A5AD5C0099CB75 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16D9E9725A5AD5C0099CB75 /* AccountViewController.m */; };
+		B16D9E9F25A5AEAF0099CB75 /* AccountTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16D9E9E25A5AEAF0099CB75 /* AccountTableController.m */; };
+		B16D9EA725A5AFBB0099CB75 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16D9EA525A5AFBB0099CB75 /* AccountTableViewCell.m */; };
+		B16D9EA825A5AFBB0099CB75 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16D9EA625A5AFBB0099CB75 /* AccountTableViewCell.xib */; };
+		B183903925A86C6E00C62E37 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B183903825A86C6E00C62E37 /* UILabel+Additions.m */; };
+		B183905A25A9F5A100C62E37 /* CustomerFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B183905925A9F5A100C62E37 /* CustomerFeedbackViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -352,6 +358,17 @@
 		B16FC68C25AF7F3900E854C1 /* XSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSticker.m; sourceTree = "<group>"; };
 		BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B16D9E9625A5AD5C0099CB75 /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		B16D9E9725A5AD5C0099CB75 /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		B16D9E9D25A5AEAF0099CB75 /* AccountTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountTableController.h; sourceTree = "<group>"; };
+		B16D9E9E25A5AEAF0099CB75 /* AccountTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountTableController.m; sourceTree = "<group>"; };
+		B16D9EA425A5AFBB0099CB75 /* AccountTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
+		B16D9EA525A5AFBB0099CB75 /* AccountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
+		B16D9EA625A5AFBB0099CB75 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		B183903725A86C6E00C62E37 /* UILabel+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
+		B183903825A86C6E00C62E37 /* UILabel+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
+		B183905825A9F5A100C62E37 /* CustomerFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerFeedbackViewController.h; sourceTree = "<group>"; };
+		B183905925A9F5A100C62E37 /* CustomerFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedbackViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +404,7 @@
 			children = (
 				6E4A18022588A744008578BA /* ThummIt-PrefixHeader.pch */,
 				6E9BEA4B258F1A9200F7F539 /* ThummIt-Bridging-Header.h */,
+				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E1190E32584B163000DD9C0 /* ThummIt */,
 				6E1190FF2584B165000DD9C0 /* ThummItMakerTests */,
 				6E11910A2584B165000DD9C0 /* ThummItMakerUITests */,
@@ -409,9 +427,10 @@
 		6E1190E32584B163000DD9C0 /* ThummIt */ = {
 			isa = PBXGroup;
 			children = (
+				B183904525A9F41C00C62E37 /* CustomerFeedbackVC */,
+				B16D9E9525A5AC9C0099CB75 /* AccountVC */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
-				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
@@ -535,6 +554,7 @@
 				6E8E7A01259237BC0008C5FF /* UIImage */,
 				6EC4DFD925A8859F0023485C /* UITextView */,
 				6EC4DFE325A88ABB0023485C /* NSArray */,
+				B183903325A86A7E00C62E37 /* Category */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -1144,6 +1164,65 @@
 				2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */,
 			);
 			path = Pods;
+		B16D9E9525A5AC9C0099CB75 /* AccountVC */ = {
+			isa = PBXGroup;
+			children = (
+				B16D9E9C25A5AE080099CB75 /* AccountTableController */,
+				B16D9E9625A5AD5C0099CB75 /* AccountViewController.h */,
+				B16D9E9725A5AD5C0099CB75 /* AccountViewController.m */,
+			);
+			path = AccountVC;
+			sourceTree = "<group>";
+		};
+		B16D9E9C25A5AE080099CB75 /* AccountTableController */ = {
+			isa = PBXGroup;
+			children = (
+				B16D9E9D25A5AEAF0099CB75 /* AccountTableController.h */,
+				B16D9E9E25A5AEAF0099CB75 /* AccountTableController.m */,
+				B16D9EA325A5AEEE0099CB75 /* AccountTableViewCell */,
+			);
+			path = AccountTableController;
+			sourceTree = "<group>";
+		};
+		B16D9EA325A5AEEE0099CB75 /* AccountTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B16D9EA425A5AFBB0099CB75 /* AccountTableViewCell.h */,
+				B16D9EA525A5AFBB0099CB75 /* AccountTableViewCell.m */,
+				B16D9EA625A5AFBB0099CB75 /* AccountTableViewCell.xib */,
+			);
+			path = AccountTableViewCell;
+			sourceTree = "<group>";
+		};
+		B183903325A86A7E00C62E37 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6E4A17FA2588A521008578BA /* UIVIew */,
+				6E9BEA73258F519600F7F539 /* UIButton */,
+				6E9BEA7D258F51BE00F7F539 /* NSDate */,
+				6E8E79AB258F87100008C5FF /* NSString */,
+				6E8E7A01259237BC0008C5FF /* UIImage */,
+				B183903D25A86C7200C62E37 /* UILabel */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B183903D25A86C7200C62E37 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				B183903725A86C6E00C62E37 /* UILabel+Additions.h */,
+				B183903825A86C6E00C62E37 /* UILabel+Additions.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		B183904525A9F41C00C62E37 /* CustomerFeedbackVC */ = {
+			isa = PBXGroup;
+			children = (
+				B183905825A9F5A100C62E37 /* CustomerFeedbackViewController.h */,
+				B183905925A9F5A100C62E37 /* CustomerFeedbackViewController.m */,
+			);
+			path = CustomerFeedbackVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1268,6 +1347,7 @@
 				6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */,
 				6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */,
 				6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */,
+				B16D9EA825A5AFBB0099CB75 /* AccountTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,6 +1477,7 @@
 			files = (
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
+				B16D9EA725A5AFBB0099CB75 /* AccountTableViewCell.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
@@ -1427,7 +1508,9 @@
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */,
+				B16D9E9825A5AD5C0099CB75 /* AccountViewController.m in Sources */,
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
+				B183903925A86C6E00C62E37 /* UILabel+Additions.m in Sources */,
 				6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */,
 				6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */,
 				6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */,
@@ -1475,6 +1558,7 @@
 				B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */,
 				6E4A18452588C87A008578BA /* ChristmasCircle.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
+				B183905A25A9F5A100C62E37 /* CustomerFeedbackViewController.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */,
 				6E1190E92584B163000DD9C0 /* SceneDelegate.m in Sources */,
@@ -1487,6 +1571,7 @@
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
+				B16D9E9F25A5AEAF0099CB75 /* AccountTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

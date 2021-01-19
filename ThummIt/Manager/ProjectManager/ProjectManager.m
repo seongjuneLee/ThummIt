@@ -229,7 +229,7 @@
     
     NSString *dateString = [NSDate localizedDateString] ?: @"";
     NSString *randomString = [NSString randomStringWithLength:4] ?: @"";
-    
+
     NSString *projectID = [NSString stringWithFormat:@"%@_%@",dateString,randomString];
 
     return projectID;
