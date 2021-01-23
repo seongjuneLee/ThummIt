@@ -19,6 +19,7 @@
         self.bgImageName = @"trapezoidBox";
         self.fontSize = 20;
         self.bgWidthPadding = 50;
+        
     }
     return self;
 }

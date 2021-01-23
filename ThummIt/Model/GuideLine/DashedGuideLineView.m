@@ -5,10 +5,10 @@
 //  Created by 이성준 on 2021/01/21.
 //
 
-#import "DashedGuideLine.h"
+#import "DashedGuideLineView.h"
 #import "Item.h"
 
-@implementation DashedGuideLine
+@implementation DashedGuideLineView
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -23,14 +23,6 @@
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame{
-    
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self makeViewDashed];
-    }
-    return self;
-}
 
 -(id)initWithItem:(Item *)item{
     
@@ -44,10 +36,17 @@
     
 }
 
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    self = [super initWithFrame:frame];
+    
+    [self makeViewDashed];
+    
+    return self;
+}
+
 -(void)makeViewDashed{
-    
-    // Important, otherwise we will be adding multiple sub layers
-    
+        
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     UIBezierPath *path = [UIBezierPath bezierPath];
     //draw a line
@@ -56,8 +55,6 @@
     [path addLineToPoint:CGPointMake(self.frameSize.width, 0)];// add yourEndPoint here
     [path stroke];
 
-//    CGFloat dashPattern[] = {2.0f,6.0f,4.0f,2.0f}; //make your pattern here
-//    [path setLineDash:dashPattern count:4 phase:3];
 
     UIColor *fill = [UIColor colorWithRed:60.0/255.0 green:120.0/255.0 blue:180.0/255.0 alpha:1.0];
     shapeLayer.strokeStart = 0.0;

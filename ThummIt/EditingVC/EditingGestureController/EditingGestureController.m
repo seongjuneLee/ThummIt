@@ -10,8 +10,6 @@
 #import "PhotoFrame.h"
 #import "ItemManager.h"
 #import "SaveManager.h"
-#import "GuideLine.h"
-#import "DashedGuideLine.h"
 @implementation EditingGestureController
 
 -(id)init{
@@ -135,13 +133,13 @@
             return;
         }
         deltaPoint = CGPointMake(currentPoint.x - self.originalPoint.x,currentPoint.y - self.originalPoint.y);
-        
+
         editingVC.currentItem.baseView.centerX += deltaPoint.x;
         editingVC.currentItem.baseView.centerY += deltaPoint.y;
         [self.delegate deleteImageRespondToCurrentPointY:currentPoint.y];
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         editingVC.currentItem.center = editingVC.currentItem.baseView.center;
-        
+        [self showGuideLineWithMagnetWithDeltaPoint:deltaPoint];
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (!editingVC.currentItem) {
             return;
@@ -153,24 +151,11 @@
         if (!self.isPinching) {
             [SaveManager.sharedInstance save];
         }
-
+        [self removeGuideLine];
     }
 
 }
 
--(void)showGuideLineWithMagnet{
-    
-    GuideLine *guideLine = [[GuideLine alloc] init];
-    
-    // 1. 중앙
-    // 2. 상하 좌우
-    // 3. 아이템 테두리
-    
-    
-    DashedGuideLine *dashedLine = [[DashedGuideLine alloc] init];
-    
-    
-}
 
 -(void)gestureViewPannedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPanGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
@@ -196,7 +181,7 @@
         }
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
     } else if (sender.state == UIGestureRecognizerStateEnded){
-
+        [self removeGuideLine];
     }
 
 }
@@ -281,21 +266,23 @@
         // 최종 적용
         editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
         
+        
         // 중심값 이동
         CGPoint newPinchCenter = [sender locationInView:editingVC.view];
         float translationX = newPinchCenter.x - self.originalPinchCenter.x;
         float translationY = newPinchCenter.y - self.originalPinchCenter.y;
         
-        // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         editingVC.currentItem.baseView.center = changedPoint;
         editingVC.currentItem.center = changedPoint;
+        [self showSizeGuideLineWithMagnetWithDeltaScale:changeScale];
+        [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
         [SaveManager.sharedInstance save];
-
+        [self removeGuideLine];
     }
     
 }
@@ -349,6 +336,8 @@
         photoFrame.photoCenter = changedPoint;
         photoFrame.photoScale = self.originalScaleRatio*changeScale;
         photoFrame.photoRotationDegree = self.currentRotation;
+    }else if (sender.state == UIGestureRecognizerStateEnded){
+        [self removeGuideLine];
     }
 
 }
@@ -433,6 +422,296 @@
     CGFloat xDist = (point2.x - point1.x);
     CGFloat yDist = (point2.y - point1.y);
     return sqrt((xDist * xDist) + (yDist * yDist));
+}
+
+-(void)showGuideLineWithMagnetWithDeltaPoint:(CGPoint)deltaPoint{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    float padding = 5;
+    
+    // 1. 중앙
+    
+    float criteria = 0;
+    float object = 0;
+    float deltaLimit = 0.75;
+    
+    //1 - 1 centerX
+    criteria = editingVC.bgView.centerX;
+    object = editingVC.currentItem.baseView.centerX;
+
+    if (criteria - padding <= object && object <= criteria + padding) {
+        /// 자석에 들러붙어서 안움직여지는 상황 방지
+        if (self.centerXLine && deltaPoint.x > deltaLimit) {
+            editingVC.currentItem.baseView.centerX += padding;
+            return;
+        }
+        if (self.centerXLine && deltaPoint.x < -deltaLimit) {
+            editingVC.currentItem.baseView.centerX -= padding;
+            return;
+        }
+        ///
+
+        if (!self.centerXLine) {
+            self.centerXLine = [[GuideLine alloc] initWithType:GuideTypeCenterX withView:editingVC.bgView];
+            [self.centerXLine addSubViewToSuperView:editingVC.view];
+        }
+        editingVC.currentItem.baseView.centerX = criteria;
+
+    } else{
+         [self.centerXLine removeFromSuperView];
+        self.centerXLine = nil;
+    }
+    
+    // 1 - 2 centerY
+    
+    criteria = editingVC.bgView.centerY;
+    object = editingVC.currentItem.baseView.centerY;
+
+    if (criteria - padding <= object && object <= criteria + padding) {
+        if (self.centerYLine && deltaPoint.y > deltaLimit) {
+            editingVC.currentItem.baseView.centerY += padding;
+            return;
+        }
+        if (self.centerYLine && deltaPoint.y < -deltaLimit) {
+            editingVC.currentItem.baseView.centerY -= padding;
+            return;
+        }
+
+        if (!self.centerYLine) {
+            self.centerYLine = [[GuideLine alloc] initWithType:GuideTypeCenterY withView:editingVC.bgView];
+            [self.centerYLine addSubViewToSuperView:editingVC.view];
+          }
+        editingVC.currentItem.baseView.centerY = criteria;
+    } else{
+         [self.centerYLine removeFromSuperView];
+        self.centerYLine = nil;
+    }
+    
+    // 2. 상하 좌우
+    // 2-1 상
+    
+    criteria = editingVC.bgView.frameY;
+    object = editingVC.currentItem.baseView.frameY;
+
+    if (criteria - padding <= object && object <= criteria + padding) {
+        
+        if (self.topLine && deltaPoint.y > deltaLimit) {
+            editingVC.currentItem.baseView.centerY += padding;
+            return;
+        }
+        if (self.topLine && deltaPoint.y < -deltaLimit) {
+            editingVC.currentItem.baseView.centerY -= padding;
+            return;
+        }
+
+        if (!self.topLine) {
+            self.topLine = [[GuideLine alloc] initWithType:GuideTypeTop withView:editingVC.bgView];
+            [self.topLine addSubViewToSuperView:editingVC.view];
+          }
+        editingVC.currentItem.baseView.centerY = criteria + editingVC.currentItem.baseView.frameHeight/2;
+    } else{
+         [self.topLine removeFromSuperView];
+        self.topLine = nil;
+    }
+    
+    //2-2 하
+    
+    criteria = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
+    object = editingVC.currentItem.baseView.frameY + editingVC.currentItem.baseView.frameHeight;
+
+    if (criteria - padding <= object && object <= criteria + padding) {
+        
+        if (self.bottomLine && deltaPoint.y > deltaLimit) {
+            editingVC.currentItem.baseView.centerY += padding;
+            return;
+        }
+        if (self.bottomLine && deltaPoint.y < -deltaLimit) {
+            editingVC.currentItem.baseView.centerY -= padding;
+            return;
+        }
+
+        if (!self.bottomLine) {
+            self.bottomLine = [[GuideLine alloc] initWithType:GuideTypeBottom withView:editingVC.bgView];
+            [self.bottomLine addSubViewToSuperView:editingVC.view];
+          }
+        editingVC.currentItem.baseView.centerY = criteria - editingVC.currentItem.baseView.frameHeight/2;
+    } else{
+         [self.bottomLine removeFromSuperView];
+        self.bottomLine = nil;
+    }
+    
+    // 2-3 좌
+    criteria = editingVC.bgView.frameX;
+    object = editingVC.currentItem.baseView.frameX;
+
+    if (criteria - padding <= object && object <= criteria + padding) {
+        
+        if (self.leadingLine && deltaPoint.x > deltaLimit) {
+            editingVC.currentItem.baseView.centerX += padding;
+            return;
+        }
+        if (self.leadingLine && deltaPoint.x < -deltaLimit) {
+            editingVC.currentItem.baseView.centerX -= padding;
+            return;
+        }
+
+        if (!self.leadingLine) {
+            self.leadingLine = [[GuideLine alloc] initWithType:GuideTypeLeading withView:editingVC.bgView];
+            [self.leadingLine addSubViewToSuperView:editingVC.view];
+          }
+        editingVC.currentItem.baseView.centerX = criteria + editingVC.currentItem.baseView.frameWidth/2;
+    } else{
+         [self.leadingLine removeFromSuperView];
+        self.leadingLine = nil;
+    }
+
+    // 2-4 우
+    criteria = editingVC.bgView.frameX + editingVC.bgView.frameWidth;
+    object = editingVC.currentItem.baseView.frameX + editingVC.currentItem.baseView.frameWidth;
+
+    if (criteria - padding <= object && object <= criteria + padding) {
+        
+        if (self.trailingLine && deltaPoint.x > deltaLimit) {
+            editingVC.currentItem.baseView.centerX += padding;
+            return;
+        }
+        if (self.trailingLine && deltaPoint.x < -deltaLimit) {
+            editingVC.currentItem.baseView.centerX -= padding;
+            return;
+        }
+
+        if (!self.trailingLine) {
+            self.trailingLine = [[GuideLine alloc] initWithType:GuideTypeTrailing withView:editingVC.bgView];
+            [self.trailingLine addSubViewToSuperView:editingVC.view];
+          }
+        editingVC.currentItem.baseView.centerX = criteria - editingVC.currentItem.baseView.frameWidth/2;
+    } else{
+         [self.trailingLine removeFromSuperView];
+        self.trailingLine = nil;
+    }
+
+    
+    
+    ///
+    // 1. 아이템과 아이템 사이의 중앙
+    
+    
+    // 2. 아이템과 아이템 사이의 탑
+    
+    // 3. 아이템과 아이템 사이의 바텀
+    
+    // 4. 아이템과 아이템 사이의 리딩
+    
+    // 5. 아이템과 아이템 사이의 트레일링
+    
+    // 6. BGView의 중앙 탑 바텀 리팅 트레일링 으로부터 15
+    
+    
+}
+
+-(void)showDegreeGuideLineWithMagnetWithDeltaDegree:(float)currentRadians withScaleTransform:(CGAffineTransform)scaleTransform{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    float padding = 0.1;
+    for (NSNumber *guideDegree in [self degreesForGuideLine]) {
+        float rotationDegree = guideDegree.floatValue;
+        float guideRadians = degreesToRadians(rotationDegree);
+        NSLog(@"degree %f",currentRadians);
+        if (guideRadians - padding <= currentRadians && currentRadians <= guideRadians + padding) {
+            
+            if (!self.degreeLine) {
+                self.degreeLine = [[GuideLine alloc] initWithType:GuideTypeDegree withView:editingVC.currentItem.baseView];
+                [self.degreeLine addSubViewToSuperView:editingVC.view];
+            }
+            self.degreeLine.degreeDashedGuideView.center = editingVC.currentItem.baseView.center;
+            self.degreeLine.degreeDashedGuideView.transform = CGAffineTransformMakeRotation(guideRadians);
+            editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, CGAffineTransformMakeRotation(guideRadians));
+            
+        } else {
+            [self.degreeLine removeFromSuperView];
+            self.degreeLine = nil;
+        }
+        
+    }
+    
+}
+
+-(NSMutableArray *)degreesForGuideLine{
+    
+    NSMutableArray *degrees = [NSMutableArray array];
+    
+    for (int i = -20; i < 20; i ++) {
+        [degrees addObject:@(i*45)];
+    }
+
+    return degrees;
+    
+}
+
+-(void)showSizeGuideLineWithMagnetWithDeltaScale:(float)deltaScale{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    float padding = 5;
+    for (NSValue *size in [self frameSizesForFrameGuide]) {
+        CGSize criteriaSize = size.CGSizeValue;
+        
+        if ((criteriaSize.height - padding <= editingVC.currentItem.baseView.frameHeight &&  editingVC.currentItem.baseView.frameHeight <= criteriaSize.height + padding) && (criteriaSize.width - padding <= editingVC.currentItem.baseView.frameWidth &&  editingVC.currentItem.baseView.frameWidth <= criteriaSize.width + padding)) {
+            if (!self.itemFrameLine) {
+                self.itemFrameLine = [[GuideLine alloc] initWithType:GuideTypeFrame withView:editingVC.currentItem.baseView];
+                [self.itemFrameLine addSubViewToSuperView:editingVC.view];
+            }
+            editingVC.currentItem.baseView.transform = CGAffineTransformConcat(editingVC.currentItem.baseView.transform, CGAffineTransformMakeScale(criteriaSize.width/editingVC.currentItem.baseView.frameWidth, criteriaSize.height/editingVC.currentItem.baseView.frameHeight));
+            break;
+        }else{
+            [self.itemFrameLine removeFromSuperView];
+            self.itemFrameLine = nil;
+        }
+        
+    }
+    
+}
+
+-(NSMutableArray *)frameSizesForFrameGuide{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    NSMutableArray *frames = [NSMutableArray array];
+    
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        if (item != editingVC.currentItem) {
+            [frames addObject:@(item.baseView.frameSize)];
+        }
+    }
+    CGSize bgViewFrameSize = editingVC.bgView.frameSize;
+    CGSize half = CGSizeMake(editingVC.bgView.frameWidth/2, editingVC.bgView.frameHeight/2) ;
+    CGSize quarter = CGSizeMake(editingVC.bgView.frameWidth/4, editingVC.bgView.frameHeight/4) ;
+    [frames addObject:@(bgViewFrameSize)];
+    [frames addObject:@(half)];
+    [frames addObject:@(quarter)];
+    return frames;
+}
+
+-(void)removeGuideLine{
+    
+    [self.centerXLine removeFromSuperView];
+    [self.centerYLine removeFromSuperView];
+    [self.leadingLine removeFromSuperView];
+    [self.trailingLine removeFromSuperView];
+    [self.topLine removeFromSuperView];
+    [self.bottomLine removeFromSuperView];
+    [self.itemFrameLine removeFromSuperView];
+    [self.bgViewFrameLine removeFromSuperView];
+    [self.degreeLine removeFromSuperView];
+    
+    self.centerXLine = nil;
+    self.centerYLine = nil;
+    self.leadingLine = nil;
+    self.trailingLine = nil;
+    self.topLine = nil;
+    self.bottomLine = nil;
+    self.itemFrameLine = nil;
+    self.bgViewFrameLine = nil;
+    self.degreeLine = nil;
 }
 
 

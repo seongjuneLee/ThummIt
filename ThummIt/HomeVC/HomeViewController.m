@@ -10,8 +10,8 @@
 #import "Project.h"
 #import "ProjectManager.h"
 #import "SaveManager.h"
-#import "GuideLine.h"
-#import "DashedGuideLine.h"
+#import "GuideLineView.h"
+#import "DashedGuideLineView.h"
 
 @interface HomeViewController ()
 

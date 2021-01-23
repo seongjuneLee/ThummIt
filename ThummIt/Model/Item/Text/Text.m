@@ -28,7 +28,6 @@
         self.rotationDegree = 0;
         self.scale = 1;
         
-        
     }
     return self;
 }
@@ -342,7 +341,14 @@
     // 텍스트뷰 리사이즈
     [self.textView resizeForCurrentFontSize];
     // 컨테이너 리사이즈
-    self.textViewContainer.bounds = self.textView.bounds;
+    if (self.typo.bgImageName) {
+        self.textViewContainer.bounds = self.backgroundImageView.bounds;
+        self.textView.center = CGPointMake(self.textViewContainer.frameWidth/2, self.textViewContainer.frameHeight/2);
+        self.backgroundImageView.center = CGPointMake(self.textViewContainer.frameWidth/2, self.textViewContainer.frameHeight/2);
+    } else {
+        self.textViewContainer.bounds = self.textView.bounds;
+    }
+
     // 배경이미지뷰 리사이즈
     [self updateBackgroundImageViewFrame:self.typo];
 }

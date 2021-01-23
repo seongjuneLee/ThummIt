@@ -12,6 +12,8 @@
 #import "Sticker.h"
 #import "EditingModeController.h"
 #import "EditingModeController.h"
+#import "GuideLine.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol EditingGestureControllerDelegate <NSObject>
@@ -52,8 +54,20 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint originalSecondFinger;
 @property (nonatomic) CGPoint originalItemViewCenter;
 
-
 @property (nonatomic) BOOL isPinchingItem;
+
+// 가이드 라인
+@property (strong, nonatomic, nullable) GuideLine *centerXLine;
+@property (strong, nonatomic, nullable) GuideLine *centerYLine;
+@property (strong, nonatomic, nullable) GuideLine *topLine;
+@property (strong, nonatomic, nullable) GuideLine *bottomLine;
+@property (strong, nonatomic, nullable) GuideLine *leadingLine;
+@property (strong, nonatomic, nullable) GuideLine *trailingLine;
+@property (strong, nonatomic, nullable) GuideLine *degreeLine;
+@property (strong, nonatomic, nullable) GuideLine *itemFrameLine;
+@property (strong, nonatomic, nullable) GuideLine *bgViewFrameLine;
+
+@property (strong ,nonatomic, nullable) UINotificationFeedbackGenerator *feedbackGenerator;
 
 -(void)addGestureRecognizers;
 

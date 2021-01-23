@@ -1,5 +1,5 @@
 //
-//  DashedGuideLine.h
+//  GuideLine.h
 //  ThummIt
 //
 //  Created by 이성준 on 2021/01/21.
@@ -8,9 +8,9 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface DashedGuideLine : UIView
 
--(void)makeViewDashed;
+@interface GuideLineView : UIView
+
 
 @end
 

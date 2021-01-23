@@ -4,16 +4,20 @@
 //
 //  Created by 이성준 on 2020/12/15.
 //
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#define degreesToRadians( degrees ) ( ( degrees ) / 180.0 * M_PI )
+
+static inline CGFloat RadiansToDegrees(CGFloat radians) {
+    return radians * 180 / M_PI;
+};
 
 #ifndef WYT_PrefixHeader_pch
 #define WYT_PrefixHeader_pch
 #define RANDOM_TEXT @"faskjf2j4fkjh2kj4nf2jfnkj4j3"
-#define degreesToRadians( degrees ) ( ( degrees ) / 180.0 * M_PI )
 #define TEXT_FONT_SIZE 25
 
-#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
 
 #import "UIView+Additions.h"
 #import <Photos/Photos.h>

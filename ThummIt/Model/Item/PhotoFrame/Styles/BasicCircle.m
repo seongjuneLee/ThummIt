@@ -17,7 +17,7 @@
         self.itemName = @"BasicCircle";
         self.isCircle = true;
         [self makeBaseView];
-        
+        self.baseView.backgroundColor = UIColor.redColor;
     }
     return self;
     
