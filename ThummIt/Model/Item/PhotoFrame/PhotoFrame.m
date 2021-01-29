@@ -128,7 +128,6 @@
     }
     
     self.photoImageView = [[UIImageView alloc] init];
-    self.photoImageView.backgroundColor = UIColor.greenColor;
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     if (self.phAsset) {
         [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {

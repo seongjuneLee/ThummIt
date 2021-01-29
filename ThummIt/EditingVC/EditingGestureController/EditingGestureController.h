@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float currentRotation;
 @property (nonatomic) float lastRotation;
 @property (nonatomic) CGPoint originalPinchCenter;
+@property (nonatomic) CGPoint convertedOriginalPinchCenter;
 @property (nonatomic) CGPoint originalFirstFinger;
 @property (nonatomic) CGPoint originalSecondFinger;
 @property (nonatomic) CGPoint originalItemViewCenter;
@@ -64,6 +65,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float shortestDistance;
 
 @property (nonatomic) BOOL isPinchingItem;
+
+@property (nonatomic) float previousScale;
+@property (nonatomic) CGRect originalPhotoImageViewRect;
 
 @property (strong, nonatomic) GuideLineView *top;
 @property (strong, nonatomic) GuideLineView *bottom;

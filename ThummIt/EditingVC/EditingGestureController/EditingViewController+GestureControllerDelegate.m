@@ -95,8 +95,12 @@
     if (!photoFrame.photoImageView.image) {
 
         [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
-            photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));
+            
+            float ratio = image.size.height/image.size.width;
+            float width = self.bgView.frameWidth;
+            float height = self.bgView.frameWidth * ratio;
+            
+            photoFrame.photoImageView.frameSize = CGSizeMake(width, height);
             photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2,photoFrame.baseView.frameHeight/2);
             photoFrame.photoCenter = photoFrame.photoImageView.center;
 

@@ -33,4 +33,11 @@
 -(UIColor *) colorOfPoint:(CGPoint)point;
 - (BOOL)isLandscape;
 - (CGFloat)widthHeightRatio;
+
+-(CGPoint)newTopLeftWithTransform:(CGAffineTransform)transform;
+-(CGPoint)newTopRightWithTransform:(CGAffineTransform)transform;
+-(CGPoint)newBottomLeftWithTransform:(CGAffineTransform)transform;
+-(CGPoint)newBottomRightWithTransform:(CGAffineTransform)transform;
+-(void)applyTransformWithScale:(float)scale withAnchorPoint:(CGPoint)anchorPoint;
+
 @end

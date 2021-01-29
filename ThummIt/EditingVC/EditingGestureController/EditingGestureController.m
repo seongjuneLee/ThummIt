@@ -11,6 +11,7 @@
 #import "ItemManager.h"
 #import "SaveManager.h"
 #import "GuideLineManager.h"
+#import "UIView+Additions.h"
 #import "GuideLine.h"
 #import "GuideTarget.h"
 @implementation EditingGestureController
@@ -383,17 +384,14 @@
         
         CGPoint newCenter  = CGPointMake(fingerPoint.x - (self.originalPoint.x - self.originalCenter.x), fingerPoint.y - (self.originalPoint.y - self.originalCenter.y));
         CGPoint photoImageViewOrigin = CGPointMake(newCenter.x - photoFrame.photoImageView.frameWidth/2, newCenter.y - photoFrame.photoImageView.frameHeight/2);
-        
         if (photoImageViewOrigin.x <= 0 && photoFrame.baseView.frameWidth <= newCenter.x + photoFrame.photoImageView.frameWidth/2 ) {
+            photoFrame.photoImageView.centerX = newCenter.x;
         }
-        if (photoImageViewOrigin.y <= 0 && photoFrame.baseView.frameHeight/2 <= newCenter.y + photoFrame.photoImageView.frameHeight/2 ) {
-        }
-        photoFrame.photoImageView.centerX = newCenter.x;
-        photoFrame.photoImageView.centerY = newCenter.y;
 
+        if (photoImageViewOrigin.y <= 0 && photoFrame.baseView.frameHeight <= newCenter.y + photoFrame.photoImageView.frameHeight/2 ) {
+            photoFrame.photoImageView.centerY = newCenter.y;
+        }
         photoFrame.photoCenter = photoFrame.photoImageView.center;
-        
-        
         
     } else if (sender.state == UIGestureRecognizerStateEnded){
         
@@ -628,7 +626,8 @@
         
         self.originalPinchCenter = CGPointMake((self.originalFirstFinger.x+self.originalSecondFinger.x)/2.0, (self.originalFirstFinger.y+self.originalSecondFinger.y)/2.0);
         self.originalItemViewCenter = photoFrame.photoImageView.center;
-        
+        self.convertedOriginalPinchCenter = [editingVC.view convertPoint:self.originalPinchCenter toView:photoFrame.photoImageView];
+
         CGPoint finger1Point = [sender locationOfTouch:0 inView:editingVC.gestureView];
         CGPoint finger2Point = [sender locationOfTouch:1 inView:editingVC.gestureView];
         
@@ -636,9 +635,8 @@
         self.originalScaleRatio = sqrt(t.a * t.a + t.c * t.c);
         self.originalPinchDistance = [self distanceFrom:finger1Point to:finger2Point];
         
-        self.comparingView = [[UIView alloc] initWithFrame:photoFrame.photoImageView.frame];
+        self.originalPhotoImageViewRect = photoFrame.photoImageView.frame;
 
-        
     } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 2){
         CGPoint finger1Point = [sender locationOfTouch:0 inView:editingVC.gestureView];
         CGPoint finger2Point = [sender locationOfTouch:1 inView:editingVC.gestureView];
@@ -648,26 +646,22 @@
         
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.originalScaleRatio*changeScale, self.originalScaleRatio*changeScale);
         
-        self.comparingView.transform = scaleTransform;
-        
-        float comparingViewTop = self.comparingView.frameY;
-        float comparingViewLeft = self.comparingView.frameX;
-        float comparingViewRight = self.comparingView.frameX + self.comparingView.frameWidth;
-        float comparingViewBottom = self.comparingView.frameY + self.comparingView.frameHeight;
-        if (comparingViewTop <= 0 && comparingViewLeft <= 0 && photoFrame.baseView.frameWidth <= comparingViewRight && photoFrame.baseView.frameHeight <= comparingViewBottom) {
-            NSLog(@"comparingViewTop: %f",comparingViewTop);
-            NSLog(@"comparingViewLeft: %f",comparingViewLeft);
-            NSLog(@"comparingViewRight: %f",comparingViewRight);
-            NSLog(@"comparingViewBottom: %f",comparingViewBottom);
-            NSLog(@"photoFrame.baseView.frameWidth %f",photoFrame.baseView.frameWidth);
-            NSLog(@"photoFrame.baseView.frameHeight %f",photoFrame.baseView.frameHeight);
-
-        }
+        photoFrame.photoImageView.layer.anchorPoint = CGPointMake(self.convertedOriginalPinchCenter.x/self.originalPhotoImageViewRect.size.width, self.convertedOriginalPinchCenter.y/self.originalPhotoImageViewRect.size.height);
         photoFrame.photoImageView.transform = scaleTransform;
-
         
-        photoFrame.photoScale = self.originalScaleRatio*changeScale;
-        photoFrame.photoRotationDegree = self.currentRotation;
+        
+        // 중심값 이동
+        CGPoint newPinchCenter = [sender locationInView:editingVC.view];
+        float translationX = newPinchCenter.x - self.originalPinchCenter.x;
+        float translationY = newPinchCenter.y - self.originalPinchCenter.y;
+        
+        // 센터가이드 적용
+        CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
+        photoFrame.photoImageView.center = changedPoint;
+
+
+    } else if (sender.state == UIGestureRecognizerStateEnded && sender.numberOfTouches ==2) {
+        photoFrame.photoImageView.layer.anchorPoint = CGPointMake(0.5, 0.5);
     }
 
 }

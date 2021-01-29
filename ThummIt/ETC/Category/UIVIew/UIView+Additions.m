@@ -349,4 +349,74 @@
     return ratio;
 }
 
+#pragma mark - frame after transform
+
+-(CGRect)originalFrame {
+   CGAffineTransform currentTransform = self.transform;
+   self.transform = CGAffineTransformIdentity;
+   CGRect originalFrame = self.frame;
+   self.transform = currentTransform;
+
+   return originalFrame;
+}
+
+// helper to get point offset from center
+-(CGPoint)centerOffset:(CGPoint)thePoint {
+    return CGPointMake(thePoint.x - self.center.x, thePoint.y - self.center.y);
+}
+// helper to get point back relative to center
+-(CGPoint)pointRelativeToCenter:(CGPoint)thePoint {
+  return CGPointMake(thePoint.x + self.center.x, thePoint.y + self.center.y);
+}
+// helper to get point relative to transformed coords
+-(CGPoint)newPointInView:(CGPoint)thePoint withTransform:(CGAffineTransform)transform{
+    // get offset from center
+    CGPoint offset = [self centerOffset:thePoint];
+    // get transformed point
+    CGPoint transformedPoint = CGPointApplyAffineTransform(offset, transform);
+    // make relative to center
+    return [self pointRelativeToCenter:transformedPoint];
+}
+
+// now get your corners
+-(CGPoint)newTopLeftWithTransform:(CGAffineTransform)transform {
+    CGRect frame = [self originalFrame];
+    return [self newPointInView:frame.origin withTransform:transform];
+}
+-(CGPoint)newTopRightWithTransform:(CGAffineTransform)transform {
+    CGRect frame = [self originalFrame];
+    CGPoint point = frame.origin;
+    point.x += frame.size.width;
+    return [self newPointInView:point withTransform:transform];
+}
+-(CGPoint)newBottomLeftWithTransform:(CGAffineTransform)transform {
+    CGRect frame = [self originalFrame];
+    CGPoint point = frame.origin;
+    point.y += frame.size.height;
+    return [self newPointInView:point withTransform:transform];
+}
+-(CGPoint)newBottomRightWithTransform:(CGAffineTransform)transform {
+    CGRect frame = [self originalFrame];
+    CGPoint point = frame.origin;
+    point.x += frame.size.width;
+    point.y += frame.size.height;
+    return [self newPointInView:point withTransform:transform];
+}
+
+-(void)applyTransformWithScale:(float)scale withAnchorPoint:(CGPoint)anchorPoint {
+    
+    self.layer.anchorPoint = anchorPoint;
+    if (scale != 0) {
+        float xPadding = 1/scale * (anchorPoint.x - 0.5)*self.bounds.size.width;
+        float yPadding = 1/scale * (anchorPoint.y - 0.5)*self.bounds.size.height;
+        self.transform =   CGAffineTransformScale(CGAffineTransformMakeTranslation(xPadding, yPadding), scale, scale);
+    }
+//    layer.anchorPoint = anchorPoint
+//    let scale = scale != 0 ? scale : CGFloat.leastNonzeroMagnitude
+//    let xPadding = 1/scale * (anchorPoint.x - 0.5)*bounds.width
+//    let yPadding = 1/scale * (anchorPoint.y - 0.5)*bounds.height
+//    transform = CGAffineTransform(scaleX: scale, y: scale).translatedBy(x: xPadding, y: yPadding)
+
+}
+
 @end
