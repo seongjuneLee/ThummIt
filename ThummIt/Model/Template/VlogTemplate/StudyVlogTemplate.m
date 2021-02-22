@@ -13,7 +13,7 @@
     
     self = [super init];
     if(self){
-        
+           
         self.previewImageName = @"studyVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StudyVlogTemplate";
