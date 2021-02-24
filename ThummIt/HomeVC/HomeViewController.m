@@ -28,6 +28,12 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"HomeTableViewCell"];
     [self connectHomeTableController];
     
+    for (NSString *familyName in UIFont.familyNames) {
+            NSLog(@"familyName : %@",familyName);
+            for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+                NSLog(@"fontName : %@",fontName);
+            }
+        }
     
 }
 

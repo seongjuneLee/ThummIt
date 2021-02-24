@@ -238,6 +238,22 @@
 		6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646725DAD938009FF873 /* InfiniteTemplateRectangle2.m */; };
 		6EC7647025DADB74009FF873 /* StudyTemplateRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */; };
 		6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC764B525E51E89009FF873 /* WebKit.framework */; };
+		6EC764C125E62DDB009FF873 /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764BF25E62D34009FF873 /* Maplestory OTF Bold.otf */; };
+		6EC764C425E62DE2009FF873 /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764BD25E62D33009FF873 /* Maplestory OTF Light.otf */; };
+		6EC764C525E62DE9009FF873 /* Cafe24Syongsyong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764BC25E62D33009FF873 /* Cafe24Syongsyong.otf */; };
+		6EC764C825E62DEF009FF873 /* UTOIMAGE_유토이미지봄이조아_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764BE25E62D34009FF873 /* UTOIMAGE_유토이미지봄이조아_OTF.otf */; };
+		6EC764CB25E62DFA009FF873 /* UTOIMAGE_유토이미지제주감귤R_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764C025E62D34009FF873 /* UTOIMAGE_유토이미지제주감귤R_OTF.otf */; };
+		6EC764CE25E62E01009FF873 /* Cafe24Ohsquareair.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764BB25E62D33009FF873 /* Cafe24Ohsquareair.otf */; };
+		6EC764D425E62EF1009FF873 /* HelloTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764D325E62EF1009FF873 /* HelloTypo.m */; };
+		6EC764DB25E630B3009FF873 /* GoodByeTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764DA25E630B3009FF873 /* GoodByeTypo.m */; };
+		6EC764E025E630C7009FF873 /* ThankYouTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764DF25E630C7009FF873 /* ThankYouTypo.m */; };
+		6EC764E525E630FB009FF873 /* SeeYouAgainTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764E425E630FB009FF873 /* SeeYouAgainTypo.m */; };
+		6EC764EA25E63167009FF873 /* HappyBrithdayPypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764E925E63167009FF873 /* HappyBrithdayPypo.m */; };
+		6EC764F625E6321E009FF873 /* LifeTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764F525E6321E009FF873 /* LifeTypo.m */; };
+		6EC764FB25E65A35009FF873 /* ROEHOE-CHAN.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC764FA25E65A0D009FF873 /* ROEHOE-CHAN.otf */; };
+		6EC7650025E65CD8009FF873 /* GalleryTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC764FF25E65CD8009FF873 /* GalleryTypo.m */; };
+		6EC7651325E67404009FF873 /* MBC 1961 OTF M.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7651225E673E4009FF873 /* MBC 1961 OTF M.otf */; };
+		6EC7651A25E6749E009FF873 /* MbcTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7651925E6749E009FF873 /* MbcTypo.m */; };
 		6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED138F925B8507A00012144 /* AppDelegate.swift */; };
 		6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1398B25B872F600012144 /* SceneDelegate.swift */; };
 		6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */; };
@@ -883,6 +899,30 @@
 		6EC7646E25DADB74009FF873 /* StudyTemplateRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyTemplateRectangle.h; sourceTree = "<group>"; };
 		6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyTemplateRectangle.m; sourceTree = "<group>"; };
 		6EC764B525E51E89009FF873 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6EC764BB25E62D33009FF873 /* Cafe24Ohsquareair.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cafe24Ohsquareair.otf; path = ../../../../../Desktop/Cafe24Ohsquareair.otf; sourceTree = "<group>"; };
+		6EC764BC25E62D33009FF873 /* Cafe24Syongsyong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cafe24Syongsyong.otf; path = ../../../../../Desktop/Cafe24Syongsyong.otf; sourceTree = "<group>"; };
+		6EC764BD25E62D33009FF873 /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Maplestory OTF Light.otf"; path = "../../../../../Desktop/Maplestory OTF Light.otf"; sourceTree = "<group>"; };
+		6EC764BE25E62D34009FF873 /* UTOIMAGE_유토이미지봄이조아_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UTOIMAGE_유토이미지봄이조아_OTF.otf"; path = "../../../../../Desktop/UTOIMAGE_유토이미지봄이조아_OTF.otf"; sourceTree = "<group>"; };
+		6EC764BF25E62D34009FF873 /* Maplestory OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Maplestory OTF Bold.otf"; path = "../../../../../Desktop/Maplestory OTF Bold.otf"; sourceTree = "<group>"; };
+		6EC764C025E62D34009FF873 /* UTOIMAGE_유토이미지제주감귤R_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UTOIMAGE_유토이미지제주감귤R_OTF.otf"; path = "../../../../../Desktop/UTOIMAGE_유토이미지제주감귤R_OTF.otf"; sourceTree = "<group>"; };
+		6EC764D225E62EF1009FF873 /* HelloTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloTypo.h; sourceTree = "<group>"; };
+		6EC764D325E62EF1009FF873 /* HelloTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloTypo.m; sourceTree = "<group>"; };
+		6EC764D925E630B3009FF873 /* GoodByeTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodByeTypo.h; sourceTree = "<group>"; };
+		6EC764DA25E630B3009FF873 /* GoodByeTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodByeTypo.m; sourceTree = "<group>"; };
+		6EC764DE25E630C7009FF873 /* ThankYouTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThankYouTypo.h; sourceTree = "<group>"; };
+		6EC764DF25E630C7009FF873 /* ThankYouTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThankYouTypo.m; sourceTree = "<group>"; };
+		6EC764E325E630FB009FF873 /* SeeYouAgainTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeYouAgainTypo.h; sourceTree = "<group>"; };
+		6EC764E425E630FB009FF873 /* SeeYouAgainTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeYouAgainTypo.m; sourceTree = "<group>"; };
+		6EC764E825E63167009FF873 /* HappyBrithdayPypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HappyBrithdayPypo.h; sourceTree = "<group>"; };
+		6EC764E925E63167009FF873 /* HappyBrithdayPypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyBrithdayPypo.m; sourceTree = "<group>"; };
+		6EC764F425E6321E009FF873 /* LifeTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeTypo.h; sourceTree = "<group>"; };
+		6EC764F525E6321E009FF873 /* LifeTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeTypo.m; sourceTree = "<group>"; };
+		6EC764FA25E65A0D009FF873 /* ROEHOE-CHAN.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ROEHOE-CHAN.otf"; path = "../../../../../Desktop/ROEHOE-CHAN.otf"; sourceTree = "<group>"; };
+		6EC764FE25E65CD8009FF873 /* GalleryTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryTypo.h; sourceTree = "<group>"; };
+		6EC764FF25E65CD8009FF873 /* GalleryTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryTypo.m; sourceTree = "<group>"; };
+		6EC7651225E673E4009FF873 /* MBC 1961 OTF M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MBC 1961 OTF M.otf"; path = "../../../../../Desktop/MBC 1961 OTF M.otf"; sourceTree = "<group>"; };
+		6EC7651825E6749E009FF873 /* MbcTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MbcTypo.h; sourceTree = "<group>"; };
+		6EC7651925E6749E009FF873 /* MbcTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MbcTypo.m; sourceTree = "<group>"; };
 		6ED138F925B8507A00012144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1398B25B872F600012144 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
@@ -2242,8 +2282,16 @@
 		6EAFD5BA25B876D700B193AB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6EC764BB25E62D33009FF873 /* Cafe24Ohsquareair.otf */,
+				6EC7651225E673E4009FF873 /* MBC 1961 OTF M.otf */,
+				6EC764BC25E62D33009FF873 /* Cafe24Syongsyong.otf */,
+				6EC764BF25E62D34009FF873 /* Maplestory OTF Bold.otf */,
+				6EC764BD25E62D33009FF873 /* Maplestory OTF Light.otf */,
+				6EC764BE25E62D34009FF873 /* UTOIMAGE_유토이미지봄이조아_OTF.otf */,
+				6EC764C025E62D34009FF873 /* UTOIMAGE_유토이미지제주감귤R_OTF.otf */,
 				6EBEB59F25C20AD80017C640 /* BMJUA_otf.otf */,
 				6EBEB54825C1BB360017C640 /* SangSangAnt.otf */,
+				6EC764FA25E65A0D009FF873 /* ROEHOE-CHAN.otf */,
 				6E88303525CDB08E0025B8A5 /* BinggraeSamanco-Bold.otf */,
 				6E88303125CDA7CC0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf */,
 				6EBEB52025C156330017C640 /* NanumSquareOTFExtraBold.otf */,
@@ -2498,6 +2546,7 @@
 				6ED13B8225C0898900012144 /* RunningManTypo */,
 				6EF0C92225CD22CC00BE7573 /* Dinggo */,
 				6E8F996A25C0C0A4005C8071 /* SinSeoYuGiTypo */,
+				6EC764D125E62EA2009FF873 /* NewStyleTypo */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -2520,6 +2569,29 @@
 				6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */,
 			);
 			path = StudyTemplate;
+			sourceTree = "<group>";
+		};
+		6EC764D125E62EA2009FF873 /* NewStyleTypo */ = {
+			isa = PBXGroup;
+			children = (
+				6EC764D225E62EF1009FF873 /* HelloTypo.h */,
+				6EC764D325E62EF1009FF873 /* HelloTypo.m */,
+				6EC764D925E630B3009FF873 /* GoodByeTypo.h */,
+				6EC764DA25E630B3009FF873 /* GoodByeTypo.m */,
+				6EC764DE25E630C7009FF873 /* ThankYouTypo.h */,
+				6EC764DF25E630C7009FF873 /* ThankYouTypo.m */,
+				6EC764E325E630FB009FF873 /* SeeYouAgainTypo.h */,
+				6EC764E425E630FB009FF873 /* SeeYouAgainTypo.m */,
+				6EC764E825E63167009FF873 /* HappyBrithdayPypo.h */,
+				6EC764E925E63167009FF873 /* HappyBrithdayPypo.m */,
+				6EC764F425E6321E009FF873 /* LifeTypo.h */,
+				6EC764F525E6321E009FF873 /* LifeTypo.m */,
+				6EC764FE25E65CD8009FF873 /* GalleryTypo.h */,
+				6EC764FF25E65CD8009FF873 /* GalleryTypo.m */,
+				6EC7651825E6749E009FF873 /* MbcTypo.h */,
+				6EC7651925E6749E009FF873 /* MbcTypo.m */,
+			);
+			path = NewStyleTypo;
 			sourceTree = "<group>";
 		};
 		6ED13B8225C0898900012144 /* RunningManTypo */ = {
@@ -3092,6 +3164,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC7651325E67404009FF873 /* MBC 1961 OTF M.otf in Resources */,
+				6EC764FB25E65A35009FF873 /* ROEHOE-CHAN.otf in Resources */,
+				6EC764CE25E62E01009FF873 /* Cafe24Ohsquareair.otf in Resources */,
+				6EC764CB25E62DFA009FF873 /* UTOIMAGE_유토이미지제주감귤R_OTF.otf in Resources */,
+				6EC764C825E62DEF009FF873 /* UTOIMAGE_유토이미지봄이조아_OTF.otf in Resources */,
+				6EC764C525E62DE9009FF873 /* Cafe24Syongsyong.otf in Resources */,
+				6EC764C425E62DE2009FF873 /* Maplestory OTF Light.otf in Resources */,
+				6EC764C125E62DDB009FF873 /* Maplestory OTF Bold.otf in Resources */,
 				6EC7644525D2222F009FF873 /* Fraunces_9pt-SemiBold.otf in Resources */,
 				6E88303625CDB0A80025B8A5 /* BinggraeSamanco-Bold.otf in Resources */,
 				6E88303225CDA7FA0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf in Resources */,
@@ -3346,6 +3426,7 @@
 				6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */,
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
 				6E1DBDFE25D8063F004C0416 /* ThreeFifthsRectangle.m in Sources */,
+				6EC7651A25E6749E009FF873 /* MbcTypo.m in Sources */,
 				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
 				6EF0C92A25CD266600BE7573 /* DinggoBigEdit.m in Sources */,
@@ -3381,6 +3462,7 @@
 				6EF0C89525CBD36300BE7573 /* SnowmanSticker.m in Sources */,
 				6E28451F25C35870008B7A23 /* VlogCompany.m in Sources */,
 				6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */,
+				6EC764D425E62EF1009FF873 /* HelloTypo.m in Sources */,
 				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
@@ -3423,6 +3505,7 @@
 				B1F2B74C25C1CB0B0064A044 /* InfiniteChallengeCloudBox.m in Sources */,
 				6E9BE9F4258D0F1C00F7F539 /* EditingModeController.m in Sources */,
 				6E28452425C35870008B7A23 /* VlogSummer.m in Sources */,
+				6EC764EA25E63167009FF873 /* HappyBrithdayPypo.m in Sources */,
 				B1836F6125C32C1800A81446 /* InfiniteChallenge2Template.m in Sources */,
 				6EF0C89A25CBDB2500BE7573 /* SpeechBubbleSticker1.m in Sources */,
 				6EF0C80D25CBB0C600BE7573 /* EffectSticker3.m in Sources */,
@@ -3430,6 +3513,7 @@
 				6EBEB64825C428940017C640 /* WorkManFast.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E28451A25C35870008B7A23 /* VlogLookbookTypo.m in Sources */,
+				6EC764DB25E630B3009FF873 /* GoodByeTypo.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
 				6ED13D5725C2C8B000012144 /* StartleSticker1.m in Sources */,
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
@@ -3499,6 +3583,7 @@
 				6EBEB55C25C1C6D20017C640 /* WorkmanYelloewTitle.m in Sources */,
 				6E28451C25C35870008B7A23 /* VlogInItaly.m in Sources */,
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
+				6EC7650025E65CD8009FF873 /* GalleryTypo.m in Sources */,
 				6EF0C7BA25CBAA2B00BE7573 /* ArrowSticker3.m in Sources */,
 				6EBEB67925C494C90017C640 /* HeartSticker2.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
@@ -3605,6 +3690,7 @@
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				B1F2B72C25C1BF2B0064A044 /* InfiniteChallengeTopOfYellow.m in Sources */,
 				6EF0C7CE25CBAA5900BE7573 /* ArrowSticker7.m in Sources */,
+				6EC764E025E630C7009FF873 /* ThankYouTypo.m in Sources */,
 				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
 				6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */,
 				6EF0C7D325CBAC8A00BE7573 /* BlinkSticker3.m in Sources */,
@@ -3639,6 +3725,8 @@
 				6E28452125C35870008B7A23 /* VlogTrip.m in Sources */,
 				6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */,
 				6EBEB58825C1EA310017C640 /* WorkManTemplate2.m in Sources */,
+				6EC764F625E6321E009FF873 /* LifeTypo.m in Sources */,
+				6EC764E525E630FB009FF873 /* SeeYouAgainTypo.m in Sources */,
 				6ED13BAA25C08F9000012144 /* RedShoutingTypo.m in Sources */,
 				6EF0C8BD25CBDB8E00BE7573 /* StarSticker2.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,

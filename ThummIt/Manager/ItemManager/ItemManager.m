@@ -127,7 +127,6 @@
     DinggoGoodTalk *dinggoGoodTalk = [DinggoGoodTalk dinggoGoodTalk];
     DinggoStarWarsTypo *dinggoStarWarsTypo = [DinggoStarWarsTypo dinggoStarWarsTypo];
     DinggoBehindTypo *dinggoBehindTypo = [DinggoBehindTypo dinggoBehindTypo];
-    DinggoWinkTypo *dinggoWinkTypo = [DinggoWinkTypo dinggoWinkTypo];
     DinggoMurder *dinggoMurder = [DinggoMurder dinggoMurder];
     DigitalTypo *digitalTypo = [DigitalTypo digitalTypo];
     
@@ -162,7 +161,6 @@
     VlogLongDance *vlogLongDance = [VlogLongDance vlogLongDance];
     VlogShortDance *vlogShortDance = [VlogShortDance vlogShortDance];
     VlogStudy *vlogStudy = [VlogStudy vlogStudy];
-    Vlog365 *vlog365 = [Vlog365 vlog365];
     VlogVisitingCompanyTypo *vlogVisitingCompanyTypo = [VlogVisitingCompanyTypo vlogVisitingCompanyTypo];
     VlogFreshmanTypo *vlogFreshmanTypo = [VlogFreshmanTypo vlogFreshmanTypo];
     VlogStudentTypo *vlogStudentTypo = [VlogStudentTypo vlogStudentTypo];
@@ -184,8 +182,17 @@
     VlogMacaronTypo *vlogMacaronTypo = [VlogMacaronTypo vlogMacaronTypo];
     VlogMomTypo *vlogMomTypo = [VlogMomTypo vlogMomTypo];
     VlogHolidayTypo *vlogHolidayTypo = [VlogHolidayTypo vlogHolidayTypo];
+    
+    HelloTypo *helloTypo = [HelloTypo helloTypo];
+    GoodByeTypo *goodByeTypo = [GoodByeTypo goodByeTypo];
+    ThankYouTypo *thankYouTypo = [ThankYouTypo thankYouTypo];
+    SeeYouAgainTypo *seeYouAgainTypo = [SeeYouAgainTypo seeYouAgainTypo];
+    HappyBrithdayPypo *happyBrithdayPypo = [HappyBrithdayPypo happyBrithdayPypo];
+    LifeTypo *lifeTypo = [LifeTypo lifeTypo];
+    GalleryTypo *galleryTypo = [GalleryTypo galleryTypo];
+    MbcTypo *mbcTypo = [MbcTypo mbcTypo];
 
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo,vlogDog,vlogModel,vlogSummer, vlogOriginal, vlogTrip, vlogInItaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy, vlog365,vlogFreshmanTypo,vlogStudentTypo, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag,workManYoutube, workmanYelloewTitle,workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, vlogMakingFilmTypo,vlogVisitingCompanyTypo,     vlogBarunGothicTypo, vlogMacaronTypo, vlogMomTypo, vlogHolidayTypo,dinggoSmileTypo,dinggoBigEdit,dinggoBingoTypo,dinggoPotatoTypo,dinggoGoodTalk,dinggoStarWarsTypo,dinggoBehindTypo,dinggoWinkTypo,dinggoMurder,digitalTypo];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo,vlogDog,vlogModel,vlogSummer, vlogOriginal, vlogTrip, vlogInItaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy,vlogFreshmanTypo,vlogStudentTypo, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag,workManYoutube, workmanYelloewTitle,workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, vlogMakingFilmTypo,vlogVisitingCompanyTypo,     vlogBarunGothicTypo, vlogMacaronTypo, vlogMomTypo, vlogHolidayTypo,dinggoSmileTypo,dinggoBigEdit,dinggoBingoTypo,dinggoPotatoTypo,dinggoGoodTalk,dinggoStarWarsTypo,dinggoBehindTypo,dinggoMurder,digitalTypo,helloTypo,thankYouTypo,seeYouAgainTypo,happyBrithdayPypo,lifeTypo,goodByeTypo,galleryTypo,mbcTypo];
     
     return @[typos];
 }

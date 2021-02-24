@@ -116,4 +116,14 @@
 #import "VlogStudentTypo.h"
 #import "WorkManYoutube.h"
 
+//New typo
+#import "HelloTypo.h"
+#import "GoodByeTypo.h"
+#import "ThankYouTypo.h"
+#import "SeeYouAgainTypo.h"
+#import "HappyBrithdayPypo.h"
+#import "LifeTypo.h"
+#import "GalleryTypo.h"
+#import "MbcTypo.h"
+
 #endif /* TypoHeader_h */
