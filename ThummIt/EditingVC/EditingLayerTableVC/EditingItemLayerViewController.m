@@ -6,6 +6,7 @@
 //
 
 #import "EditingItemLayerViewController.h"
+#import "EditingViewController.h"
 #import "SaveManager.h"
 #import "UIImage+Additions.h"
 
@@ -20,11 +21,6 @@
     // Do any additional setup after loading the view.
     [self.tableView registerNib:[UINib nibWithNibName:@"EditingItemLayerTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"EditingItemLayerTableViewCell"];
     self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
-
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
-      initWithTarget:self action:@selector(handleLongPress:)];
-    longPress.minimumPressDuration = 0.5; //seconds
-    [self.tableView addGestureRecognizer:longPress];
     
     self.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
     [self.impactFeedbackGenerator prepare];
@@ -65,7 +61,11 @@
 
 -(void)handleLongPress:(UILongPressGestureRecognizer *)sender{
     
-    CGPoint currentPoint = [sender locationInView:self.tableView];
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
+    CGPoint originalPoint = [sender locationInView:editingVC.gestureView];
+    CGPoint currentPoint = [self.tableView convertPoint:originalPoint fromView:editingVC.gestureView];
+    
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:currentPoint];
     
     if (!indexPath) {
@@ -73,30 +73,21 @@
     }
     if (sender.state == UIGestureRecognizerStateBegan) {
         
-        self.previousPoint = [sender locationInView:self.tableView];
+        CGPoint originalPoint = [sender locationInView:editingVC.gestureView];
+        self.previousPoint = [self.tableView convertPoint:originalPoint fromView:editingVC.gestureView];
+
         self.currentPinchingCell = (EditingItemLayerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         self.currentItem = SaveManager.sharedInstance.sortedItems[indexPath.row];
         [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
 
     } else if (sender.state == UIGestureRecognizerStateChanged) {
 
-        if (currentPoint.y <= 0) {
-            [self.tableView reloadData];
-            return;
-        } else if (currentPoint.y >= self.tableView.frameHeight) {
-            [self.tableView reloadData];
-            return;
-        }
-        
         self.currentPinchingCell.centerY = currentPoint.y;
-        
-        
-        NSLog(@"currentPoint y %f",self.currentPinchingCell.centerY);
-        
         self.currentIndexPath = [self.tableView indexPathForRowAtPoint:currentPoint];
         
         float deltaY = currentPoint.y - self.previousPoint.y;
-        self.previousPoint = [sender locationInView:self.tableView];
+        CGPoint originalPoint = [sender locationInView:editingVC.gestureView];
+        self.previousPoint = [self.tableView convertPoint:originalPoint fromView:editingVC.gestureView];
 
         BOOL isUp = false;
         if (deltaY < 0) {

@@ -72,7 +72,7 @@
         float editingItemLayerViewFrmaeY = self.undoButton.frameY + self.undoButton.frameHeight + 10;
         self.editingItemLayerVC.view.frame = CGRectMake(0, editingItemLayerViewFrmaeY, self.view.frameWidth, (self.buttonScrollView.frameY - 10) - editingItemLayerViewFrmaeY);
         [self addChildViewController:self.editingItemLayerVC];
-        [self.view addSubview:self.editingItemLayerVC.view];
+        [self.view insertSubview:self.editingItemLayerVC.view aboveSubview:self.underAreaView];
         [self.editingItemLayerVC.tableView reloadData];
     }
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
@@ -133,6 +133,7 @@
     
     self.editingItemLayerVC = (EditingItemLayerViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingItemLayerViewController"];
     self.editingItemLayerVC.layerController = self.layerController;
+    self.editingItemLayerVC.editingVC = self;
     
 }
 

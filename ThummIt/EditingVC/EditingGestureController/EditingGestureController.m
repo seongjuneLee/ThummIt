@@ -673,6 +673,15 @@
     }
 }
 
+#pragma mark - 롱탭
+
+-(void)handleLongPress:(UILongPressGestureRecognizer*)sender{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC.editingItemLayerVC handleLongPress:sender];
+    
+}
+
 
 
 #pragma mark - Helper

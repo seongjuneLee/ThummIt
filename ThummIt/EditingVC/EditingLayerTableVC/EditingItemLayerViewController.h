@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EditingItemLayerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) UIViewController *editingVC;
+
 @property (strong, nonatomic) EditingItemLayerTableViewCell *currentPinchingCell;
 @property (strong, nonatomic) UIImpactFeedbackGenerator *impactFeedbackGenerator;
 @property (nonatomic) CGPoint previousPoint;
@@ -23,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) Item *currentItem;
 @property (strong, nonatomic) NSMutableArray *sortedItems;
 
+-(void)handleLongPress:(UILongPressGestureRecognizer *)sender;
 
 @end
 

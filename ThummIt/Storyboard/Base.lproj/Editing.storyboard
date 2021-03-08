@@ -62,10 +62,6 @@
                                 <rect key="frame" x="0.0" y="110" width="414" height="233"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeV-pp-6xL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UhL-LO-vTX" userLabel="UpperArea">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
@@ -87,6 +83,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="8ON-mj-6T0"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeV-pp-6xL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-1G-W8A">
                                 <rect key="frame" x="175.5" y="64" width="63" height="24"/>
