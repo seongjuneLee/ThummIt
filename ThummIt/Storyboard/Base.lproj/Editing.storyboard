@@ -623,7 +623,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PEt-if-Pz2" secondAttribute="height" multiplier="1:1" id="OTe-MY-uTO"/>
                                 </constraints>
-                                <state key="normal" image="checkWhite"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="checkWhite" symbolScale="large" renderingMode="original"/>
+                                </state>
                                 <connections>
                                     <action selector="doneButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="WHP-co-hqW"/>
                                 </connections>
@@ -655,6 +657,16 @@
                                             <action selector="editButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="30f-L3-E8R"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yau-Tp-lDr">
+                                        <rect key="frame" x="138.5" y="-6.5" width="36" height="33"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="Style">
+                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="styleButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="L0q-0G-EU1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -662,8 +674,10 @@
                                     <constraint firstItem="Uzf-RS-t87" firstAttribute="bottom" secondItem="xik-l5-wnv" secondAttribute="bottom" id="Bz6-gg-xoE"/>
                                     <constraint firstItem="Uzf-RS-t87" firstAttribute="centerY" secondItem="8db-2X-HEy" secondAttribute="centerY" id="E7H-xo-skF"/>
                                     <constraint firstItem="Uzf-RS-t87" firstAttribute="top" secondItem="xik-l5-wnv" secondAttribute="top" id="OZc-oS-2tq"/>
+                                    <constraint firstItem="Yau-Tp-lDr" firstAttribute="centerY" secondItem="ezb-Ae-RQZ" secondAttribute="centerY" id="QVK-p7-Toj"/>
                                     <constraint firstItem="ezb-Ae-RQZ" firstAttribute="centerY" secondItem="8db-2X-HEy" secondAttribute="centerY" id="Rmf-gQ-ZbK"/>
                                     <constraint firstItem="xik-l5-wnv" firstAttribute="centerY" secondItem="8db-2X-HEy" secondAttribute="centerY" id="TXs-U1-NXh"/>
+                                    <constraint firstItem="Yau-Tp-lDr" firstAttribute="centerX" secondItem="ezb-Ae-RQZ" secondAttribute="centerX" id="btK-xX-0y2"/>
                                     <constraint firstItem="Uzf-RS-t87" firstAttribute="leading" secondItem="xik-l5-wnv" secondAttribute="leading" id="gpl-GI-B2w"/>
                                     <constraint firstItem="ezb-Ae-RQZ" firstAttribute="trailing" secondItem="xik-l5-wnv" secondAttribute="trailing" id="rXS-rH-MMM"/>
                                     <constraint firstItem="xik-l5-wnv" firstAttribute="height" secondItem="8db-2X-HEy" secondAttribute="height" id="v4B-G1-4Fl"/>
@@ -676,7 +690,9 @@
                                     <constraint firstAttribute="width" constant="40" id="cDm-3x-yCh"/>
                                     <constraint firstAttribute="width" secondItem="oFD-wV-W2R" secondAttribute="height" multiplier="1:1" id="tLT-GU-jxF"/>
                                 </constraints>
-                                <state key="normal" image="closeButton"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="closeButton" symbolScale="large" renderingMode="original"/>
+                                </state>
                                 <connections>
                                     <action selector="closeButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="Lqf-Tu-Doc"/>
                                 </connections>
@@ -736,6 +752,7 @@
                         <outlet property="collectionViewTopConstraint" destination="olh-si-ywd" id="6cW-6g-zGl"/>
                         <outlet property="editButton" destination="ezb-Ae-RQZ" id="EXC-VE-ze2"/>
                         <outlet property="photoButton" destination="Uzf-RS-t87" id="ZP7-Hc-dib"/>
+                        <outlet property="styleButton" destination="Yau-Tp-lDr" id="4cC-7P-lIY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RE-7d-2PL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -971,9 +988,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d9u-o9-gas" secondAttribute="height" multiplier="1:1" id="shD-or-5dH"/>
                                 </constraints>
-                                <state key="normal" image="checkWhite"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="checkWhite" symbolScale="large" renderingMode="original"/>
+                                </state>
                                 <connections>
                                     <action selector="doneButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="jLP-3K-woP"/>
+                                    <action selector="doneButtonTapped:" destination="HIa-ky-IgY" eventType="touchUpInside" id="s0P-Wd-sa9"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaH-an-mYq">
@@ -983,24 +1003,24 @@
                                         <rect key="frame" x="82.5" y="0.0" width="89" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ope-Bh-ttp">
+                                    <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ope-Bh-ttp">
                                         <rect key="frame" x="82.5" y="0.0" width="44" height="33"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <state key="normal" title="Photo">
                                             <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="photoButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="5vA-Hj-zUo"/>
+                                            <action selector="photoButtonTapped:" destination="HIa-ky-IgY" eventType="touchUpInside" id="fFZ-Nc-23g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lic-3w-mzi">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lic-3w-mzi">
                                         <rect key="frame" x="141.5" y="0.0" width="30" height="33"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <state key="normal" title="Edit">
                                             <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="editButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="cQO-hZ-1vM"/>
+                                            <action selector="editButtonTapped:" destination="HIa-ky-IgY" eventType="touchUpInside" id="pnr-7H-Fwj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1024,9 +1044,12 @@
                                     <constraint firstAttribute="width" constant="40" id="8jv-il-hAx"/>
                                     <constraint firstAttribute="width" secondItem="w7n-9R-M8E" secondAttribute="height" multiplier="1:1" id="J14-t3-pkp"/>
                                 </constraints>
-                                <state key="normal" image="closeButton"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="closeButton" symbolScale="large" renderingMode="original"/>
+                                </state>
                                 <connections>
                                     <action selector="closeButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="Q7r-7R-vhy"/>
+                                    <action selector="closeButtonTapped:" destination="HIa-ky-IgY" eventType="touchUpInside" id="y0J-t1-9CS"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p8-DU-rUh">
@@ -1061,7 +1084,9 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="6p8-DU-rUh" id="Z9a-CB-agW"/>
+                        <outlet property="editButton" destination="Lic-3w-mzi" id="BeR-Xz-jO2"/>
                         <outlet property="gestureView" destination="JSH-Ch-Cf9" id="3up-Wc-N50"/>
+                        <outlet property="photoButton" destination="ope-Bh-ttp" id="YOX-DB-Iln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4Y-kx-Et6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -6,6 +6,8 @@
 //
 
 #import "EditingPhotoViewController.h"
+#import "EditingViewController.h"
+#import "EditingViewController+Buttons.h"
 #import "UIView+Additions.h"
 @interface EditingPhotoViewController ()
 
@@ -23,6 +25,7 @@
     [UndoManager.sharedInstance initUndoRedoForEditingPhoto];
 }
 
+
 -(void)dismissSelf{
         
     [UIView animateWithDuration:0.2 animations:^{
@@ -38,6 +41,7 @@
 
 -(void)viewDidLayoutSubviews{
     
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     UIImage *photoImage = self.photoImageView.image;
     if (photoImage && !self.photoLoaded) {
         self.photoLoaded = true;
@@ -49,7 +53,8 @@
         } else {
             self.photoImageView.frameSize = CGSizeMake (photoImageViewHeight * 1/ratio, photoImageViewHeight);
         }
-        self.photoImageView.center = self.contentView.center;
+        self.photoImageView.center = CGPointMake( self.contentView.centerX,  self.contentView.centerY - editingVC.editingPhotoButtonVC.view.frameHeight);
+        self.originalCenter = self.photoImageView.center;
         [UndoManager.sharedInstance addCurrentPhotoToStack:photoImage];
         
     }
@@ -165,5 +170,82 @@
     CGFloat yDist = (point2.y - point1.y);
     return sqrt((xDist * xDist) + (yDist * yDist));
 }
+
+
+#pragma mark - buttons
+
+- (IBAction)editButtonTapped:(id)sender {
+}
+
+- (IBAction)photoButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [self dismissSelf];
+    [editingVC.editingPhotoButtonVC dismissSelf];
+    
+    [editingVC.albumVC showWithAnimation];
+    [UIView animateWithDuration:0.2 animations:^{
+        [editingVC.view layoutIfNeeded];
+    }];
+    
+}
+
+- (IBAction)closeButtonTapped:(id)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC.editingPhotoButtonVC dismissSelf];
+    [editingVC.albumVC dismissSelf];
+    [self dismissSelf];
+    [editingVC.layerController hideTransparentView];
+    
+    [editingVC.currentItem.baseView removeFromSuperview];
+    editingVC.modeController.editingMode = NormalMode;
+    [editingVC hideAndInitSlider];
+    [editingVC showItemsForNormalMode];
+    [editingVC.editingItemLayerVC.tableView reloadData];
+
+    editingVC.currentItem = nil;
+    editingVC.currentSticker = nil;
+    editingVC.currentText = nil;
+    editingVC.currentPhotoFrame = nil;
+    editingVC.currentPhoto = nil;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        editingVC.buttonScrollView.alpha = 1.0;
+    }];
+
+}
+
+- (IBAction)doneButtonTapped:(id)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC.editingPhotoButtonVC dismissSelf];
+    [editingVC.layerController hideTransparentView];
+    [editingVC.albumVC dismissSelf];
+    [self dismissSelf];
+    [editingVC.albumVC dismissSelf];
+    [SaveManager.sharedInstance addItem:editingVC.currentPhoto];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
+    }
+    [SaveManager.sharedInstance saveAndAddToStack];
+    editingVC.modeController.editingMode = NormalMode;
+    
+    [editingVC hideAndInitSlider];
+    [editingVC showItemsForNormalMode];
+    [editingVC.editingItemLayerVC.tableView reloadData];
+
+    editingVC.currentItem = nil;
+    editingVC.currentSticker = nil;
+    editingVC.currentText = nil;
+    editingVC.currentPhotoFrame = nil;
+    editingVC.currentPhoto = nil;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        editingVC.buttonScrollView.alpha = 1.0;
+    }];
+
+}
+
 
 @end

@@ -39,7 +39,7 @@
         photoImageView.image = finalImage;
         photoImageView.frameWidth *= widthDeltaRatio;
         photoImageView.frameHeight *= heightDeltaRatio;
-        photoImageView.center = self.contentView.center;
+        photoImageView.center = self.originalCenter;
         editingVC.currentPhoto.photoImageView.frameSize = photoImageView.frameSize;
         editingVC.currentPhoto.photoImageView.image = finalImage;
         editingVC.currentPhoto.imageData = UIImagePNGRepresentation(finalImage);
@@ -63,7 +63,7 @@
             self.photoImageView.frameWidth *= widthDeltaRatio;
             self.photoImageView.frameHeight *= heightDeltaRatio;
             self.photoImageView.image = image;
-            self.photoImageView.center = self.contentView.center;
+            self.photoImageView.center = self.originalCenter;
             editingVC.currentPhoto.photoImageView.frameSize = self.photoImageView.frameSize;
             editingVC.currentPhoto.photoImageView.image = image;
             editingVC.currentPhoto.imageData = UIImagePNGRepresentation(image);
@@ -88,7 +88,7 @@
             self.photoImageView.frameWidth *= widthDeltaRatio;
             self.photoImageView.frameHeight *= heightDeltaRatio;
             self.photoImageView.image = image;
-            self.photoImageView.center = self.contentView.center;
+            self.photoImageView.center = self.originalCenter;
             editingVC.currentPhoto.photoImageView.frameSize = self.photoImageView.frameSize;
             editingVC.currentPhoto.photoImageView.image = image;
             editingVC.currentPhoto.imageData = UIImagePNGRepresentation(image);

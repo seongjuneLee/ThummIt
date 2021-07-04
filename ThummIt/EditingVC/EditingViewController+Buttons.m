@@ -23,8 +23,6 @@
     [self exportThumbnail];
     if (self.interstitial) {
       [self.interstitial presentFromRootViewController:self];
-    } else {
-      NSLog(@"Ad wasn't ready");
     }
     
 }
@@ -89,6 +87,10 @@
     [self hideItemsForItemMode];
     [self addAlbumVC];
     [self.albumVC showWithAnimation];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.albumVC.styleButton.hidden = true;
+        self.albumVC.editButton.hidden = false;
+    });
     
     if (!self.recentPHAsset) {
         self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
@@ -135,6 +137,8 @@
     [self addAlbumVC];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.albumVC showWithAnimation];
+        self.albumVC.styleButton.hidden = false;
+        self.albumVC.editButton.hidden = true;
     });
 
     PhotoFrame *recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
@@ -437,7 +441,6 @@
     self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
     
     self.albumVC.delegate = self;
-//    self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
     
 }
 

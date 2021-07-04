@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)doneButtonTapped:(id)sender;
 - (IBAction)photoButtonTapped:(id)sender;
 - (IBAction)editButtonTapped:(id)sender;
+- (IBAction)styleButtonTapped:(id)sender;
 
 @end
 

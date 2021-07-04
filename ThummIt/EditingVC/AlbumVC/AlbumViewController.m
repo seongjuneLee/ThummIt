@@ -48,10 +48,12 @@
 
 -(void)hideWithAnimation{
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.view.alpha = 0;
         self.collectionViewTopConstraint.constant = self.view.frameHeight;
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         self.view.hidden = true;
+        self.view.alpha = 1;
     }];
 }
 
@@ -59,9 +61,11 @@
 
 -(void)dismissSelf{
     [UIView animateWithDuration:0.4 animations:^{
+        self.view.alpha = 0.0;
         self.collectionViewTopConstraint.constant = self.view.frameHeight;
         [self.view layoutIfNeeded];
     }completion:^(BOOL finished) {
+        self.view.alpha = 1.0;
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
     }];

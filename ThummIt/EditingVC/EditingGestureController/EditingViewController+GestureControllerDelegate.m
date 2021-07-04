@@ -27,7 +27,7 @@
             [self didTapPhoto:item];
             
             [self hideItemsForItemMode];
-            [self showItemCollectionVC];
+//            [self showItemCollectionVC];
 
         } else {
             [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
@@ -40,7 +40,7 @@
             }
             [self didTapPhotoFrame:item];
             [self hideItemsForItemMode];
-            [self showItemCollectionVC];
+//            [self showItemCollectionVC];
 
         } else {
             [self taskWhenDenied];
@@ -91,7 +91,6 @@
         self.titleLabel.alpha = 0.0;
         self.categoryButton.alpha = 1.0;
     }];
-
     
 }
 

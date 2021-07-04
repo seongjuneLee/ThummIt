@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UIButton *eraseButton;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (nonatomic) CGPoint originalPoint;
 @property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGPoint originalItemViewCenter;
@@ -34,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL photoLoaded;
 
 -(void)dismissSelf;
+- (IBAction)doneButtonTapped:(id)sender;
+- (IBAction)closeButtonTapped:(id)sender;
+- (IBAction)photoButtonTapped:(id)sender;
+- (IBAction)editButtonTapped:(id)sender;
 
 @end
 

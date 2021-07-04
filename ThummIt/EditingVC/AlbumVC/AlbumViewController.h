@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *categoryContainerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewTopConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *styleButton;
 
 -(void)showWithAnimation;
 -(void)hideWithAnimation;
