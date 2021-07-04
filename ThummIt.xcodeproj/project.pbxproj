@@ -88,6 +88,16 @@
 		6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A187B258A0E0B008578BA /* DoubleCircleTemplate.m */; };
 		6E4A1885258A1201008578BA /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1884258A1201008578BA /* CategoryManager.m */; };
 		6E4A1898258A138F008578BA /* HomeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1897258A138F008578BA /* HomeTableController.m */; };
+		6E5A72D326918D6000CD9C84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72D126918D5F00CD9C84 /* Reachability.m */; };
+		6E5A72E4269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72DA269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.m */; };
+		6E5A72E5269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5A72DB269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.xib */; };
+		6E5A72E6269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72DD269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.m */; };
+		6E5A72E7269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72DF269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.m */; };
+		6E5A72E8269192CB00CD9C84 /* AlbumCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72E0269192CB00CD9C84 /* AlbumCategoryViewController.m */; };
+		6E5A72E9269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72E1269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m */; };
+		6E5A72EF2691944A00CD9C84 /* AlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A72ED2691944A00CD9C84 /* AlbumManager.m */; };
+		6E5A731B269195D000CD9C84 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A7319269195D000CD9C84 /* Album.m */; };
+		6E5A73542691ABC500CD9C84 /* AlbumViewController+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A73532691ABC500CD9C84 /* AlbumViewController+Button.m */; };
 		6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BB725B89DBC00CE86FB /* GuideLineView.m */; };
 		6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */; };
 		6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */; };
@@ -150,7 +160,6 @@
 		6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4225C35261005C8071 /* SeoYuGiHungryTypo.m */; };
 		6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */; };
 		6E90EFAC25E651270059DEEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E90EFAB25E651270059DEEB /* SystemConfiguration.framework */; };
-		6E90EFB825E651880059DEEB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E90EFB625E651880059DEEB /* Reachability.m */; };
 		6E90EFC425E652530059DEEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E90EFBE25E652530059DEEB /* Localizable.strings */; };
 		6E90EFC525E652530059DEEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E90EFC025E652530059DEEB /* InfoPlist.strings */; };
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
@@ -707,6 +716,25 @@
 		6E4A1884258A1201008578BA /* CategoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		6E4A1896258A138F008578BA /* HomeTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableController.h; sourceTree = "<group>"; };
 		6E4A1897258A138F008578BA /* HomeTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableController.m; sourceTree = "<group>"; };
+		6E5A72D126918D5F00CD9C84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6E5A72D226918D5F00CD9C84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6E5A72D9269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCellFlowLayout.h; sourceTree = "<group>"; };
+		6E5A72DA269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		6E5A72DB269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		6E5A72DC269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		6E5A72DD269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCellFlowLayout.m; sourceTree = "<group>"; };
+		6E5A72DE269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AlbumCategoryViewController+CollectionViewDelegate.h"; sourceTree = "<group>"; };
+		6E5A72DF269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AlbumCategoryViewController+CollectionViewDataSource.m"; sourceTree = "<group>"; };
+		6E5A72E0269192CB00CD9C84 /* AlbumCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCategoryViewController.m; sourceTree = "<group>"; };
+		6E5A72E1269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AlbumCategoryViewController+CollectionViewDelegate.m"; sourceTree = "<group>"; };
+		6E5A72E2269192CB00CD9C84 /* AlbumCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCategoryViewController.h; sourceTree = "<group>"; };
+		6E5A72E3269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AlbumCategoryViewController+CollectionViewDataSource.h"; sourceTree = "<group>"; };
+		6E5A72ED2691944A00CD9C84 /* AlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumManager.m; sourceTree = "<group>"; };
+		6E5A72EE2691944A00CD9C84 /* AlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumManager.h; sourceTree = "<group>"; };
+		6E5A7319269195D000CD9C84 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		6E5A731A269195D000CD9C84 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		6E5A73522691ABC500CD9C84 /* AlbumViewController+Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlbumViewController+Button.h"; sourceTree = "<group>"; };
+		6E5A73532691ABC500CD9C84 /* AlbumViewController+Button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AlbumViewController+Button.m"; sourceTree = "<group>"; };
 		6E698BB625B89DBC00CE86FB /* GuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideLineView.h; sourceTree = "<group>"; };
 		6E698BB725B89DBC00CE86FB /* GuideLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLineView.m; sourceTree = "<group>"; };
 		6E698BBC25B8A21300CE86FB /* DashedGuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedGuideLineView.h; sourceTree = "<group>"; };
@@ -820,8 +848,6 @@
 		6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiInFrontOfGirlTypo.m; sourceTree = "<group>"; };
 		6E8F9B4825C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeoYuGiInFrontOfGirlTypo.h; sourceTree = "<group>"; };
 		6E90EFAB25E651270059DEEB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		6E90EFB625E651880059DEEB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		6E90EFB725E651880059DEEB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		6E90EFBF25E652530059DEEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E90EFC125E652530059DEEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E90EFC225E652530059DEEB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1601,8 +1627,11 @@
 		6E1191392584D160000DD9C0 /* AlbumVC */ = {
 			isa = PBXGroup;
 			children = (
+				6E5A72D7269192CB00CD9C84 /* AlbumCategoryVC */,
 				6E7DD4A02584D3C00014618E /* AlbumViewController.h */,
 				6E7DD4A12584D3C00014618E /* AlbumViewController.m */,
+				6E5A73522691ABC500CD9C84 /* AlbumViewController+Button.h */,
+				6E5A73532691ABC500CD9C84 /* AlbumViewController+Button.m */,
 				6E7DD4AC2584D4540014618E /* AlbumViewController+CollectionViewDataSource.h */,
 				6E7DD4AD2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m */,
 				6E7DD4A62584D4490014618E /* AlbumViewController+CollectionViewDelegate.h */,
@@ -1770,8 +1799,8 @@
 		6E4A17FB2588A529008578BA /* ETC */ = {
 			isa = PBXGroup;
 			children = (
+				6E5A72D026918D5F00CD9C84 /* InternetReachability */,
 				6E90EFBD25E652530059DEEB /* LocalizationFile */,
-				6E90EFB525E651880059DEEB /* InternetReachability */,
 				6EAFD5BA25B876D700B193AB /* Fonts */,
 				6EAFD5AB25B876C300B193AB /* Category */,
 			);
@@ -1825,6 +1854,59 @@
 				6ED1398B25B872F600012144 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		6E5A72D026918D5F00CD9C84 /* InternetReachability */ = {
+			isa = PBXGroup;
+			children = (
+				6E5A72D126918D5F00CD9C84 /* Reachability.m */,
+				6E5A72D226918D5F00CD9C84 /* Reachability.h */,
+			);
+			path = InternetReachability;
+			sourceTree = "<group>";
+		};
+		6E5A72D7269192CB00CD9C84 /* AlbumCategoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E5A72E2269192CB00CD9C84 /* AlbumCategoryViewController.h */,
+				6E5A72E0269192CB00CD9C84 /* AlbumCategoryViewController.m */,
+				6E5A72E3269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.h */,
+				6E5A72DF269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.m */,
+				6E5A72DE269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.h */,
+				6E5A72E1269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m */,
+				6E5A72D8269192CB00CD9C84 /* AlbumCategoryCollectionViewCell */,
+			);
+			path = AlbumCategoryVC;
+			sourceTree = "<group>";
+		};
+		6E5A72D8269192CB00CD9C84 /* AlbumCategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6E5A72DC269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.h */,
+				6E5A72DA269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.m */,
+				6E5A72D9269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.h */,
+				6E5A72DD269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.m */,
+				6E5A72DB269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.xib */,
+			);
+			path = AlbumCategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		6E5A72EC2691944A00CD9C84 /* AlbumManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E5A72EE2691944A00CD9C84 /* AlbumManager.h */,
+				6E5A72ED2691944A00CD9C84 /* AlbumManager.m */,
+			);
+			path = AlbumManager;
+			sourceTree = "<group>";
+		};
+		6E5A7318269195D000CD9C84 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				6E5A7319269195D000CD9C84 /* Album.m */,
+				6E5A731A269195D000CD9C84 /* Album.h */,
+			);
+			path = Album;
 			sourceTree = "<group>";
 		};
 		6E698BA325B89CB200CE86FB /* GuideLine */ = {
@@ -1889,6 +1971,7 @@
 		6E7DD50B25888C3A0014618E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6E5A7318269195D000CD9C84 /* Album */,
 				6E9BEA30258E448B00F7F539 /* Project */,
 				6E7DD51D25888C9E0014618E /* Template */,
 				6E9BE9BF258B2E7900F7F539 /* Item */,
@@ -1902,6 +1985,7 @@
 				6E4A1889258A1205008578BA /* CategoryManager */,
 				6E998780258A2AA100C8F907 /* TemplateManager */,
 				6E9BE9DF258CFD0400F7F539 /* PhotoManager */,
+				6E5A72EC2691944A00CD9C84 /* AlbumManager */,
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
 				6E9BEA5C258F1BAD00F7F539 /* ProjectManager */,
 				6E20BCC725AEF59000BBA540 /* UndoManager */,
@@ -2240,15 +2324,6 @@
 				6E1DBE9F25D82E86004C0416 /* KidsTrapezoid3.m */,
 			);
 			path = Styles;
-			sourceTree = "<group>";
-		};
-		6E90EFB525E651880059DEEB /* InternetReachability */ = {
-			isa = PBXGroup;
-			children = (
-				6E90EFB625E651880059DEEB /* Reachability.m */,
-				6E90EFB725E651880059DEEB /* Reachability.h */,
-			);
-			path = InternetReachability;
 			sourceTree = "<group>";
 		};
 		6E90EFBD25E652530059DEEB /* LocalizationFile */ = {
@@ -3831,6 +3906,7 @@
 				6ED13BBA25C093F100012144 /* BMHANNA_11yrs_otf.otf in Resources */,
 				6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */,
 				6ED13CE025C1D12900012144 /* NanumSquareOTF_acB.otf in Resources */,
+				6E5A72E5269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.xib in Resources */,
 				6E90EFC525E652530059DEEB /* InfoPlist.strings in Resources */,
 				6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */,
 				6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */,
@@ -4062,6 +4138,7 @@
 				6ED13C8A25C1ADAA00012144 /* BlueMoonTypo.m in Sources */,
 				6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */,
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
+				6E5A72E6269192CB00CD9C84 /* AlbumCollectionViewCellFlowLayout.m in Sources */,
 				6EF0C8B325CBDB6B00BE7573 /* StainSticker2.m in Sources */,
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
 				6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */,
@@ -4113,6 +4190,7 @@
 				6E28451F25C35870008B7A23 /* VlogCompany.m in Sources */,
 				6ED0AFF225E51CB50027485F /* StudentVlogMainFrame.m in Sources */,
 				6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */,
+				6E5A72E9269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m in Sources */,
 				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
@@ -4133,6 +4211,7 @@
 				6E28452A25C35870008B7A23 /* VlogWebWrite.m in Sources */,
 				6EF0C93625CD29D700BE7573 /* DinggoBingoTypo.m in Sources */,
 				6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */,
+				6E5A731B269195D000CD9C84 /* Album.m in Sources */,
 				6EF5306D25FA293F007E9B78 /* TwoMusicNoteSticker.m in Sources */,
 				6EF0C8AE25CBDB5E00BE7573 /* StainSticker1.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
@@ -4238,7 +4317,6 @@
 				6EF530FD25FA7D49007E9B78 /* RetroPlaySticker.m in Sources */,
 				6ED13D5E25C2FFA100012144 /* RunningMan2Template.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
-				6E90EFB825E651880059DEEB /* Reachability.m in Sources */,
 				6E28451725C35870008B7A23 /* VlogCookingTypo.m in Sources */,
 				6EF0C8D625CBDC3A00BE7573 /* TearsSticker.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
@@ -4248,12 +4326,14 @@
 				6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */,
 				6EBEB55C25C1C6D20017C640 /* WorkmanYelloewTitle.m in Sources */,
 				6E28451C25C35870008B7A23 /* VlogInItaly.m in Sources */,
+				6E5A73542691ABC500CD9C84 /* AlbumViewController+Button.m in Sources */,
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6EF0C7BA25CBAA2B00BE7573 /* ArrowSticker3.m in Sources */,
 				6EBEB67925C494C90017C640 /* HeartSticker2.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				B11E0D7925C57B140050D9F0 /* ModelVlogTemplate.m in Sources */,
 				6EBEB6A425C4D8B10017C640 /* SummerVlogTemplate.m in Sources */,
+				6E5A72E8269192CB00CD9C84 /* AlbumCategoryViewController.m in Sources */,
 				6EF0C83E25CBC37F00BE7573 /* HeartSticker9.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
 				6EF0C95025CD4F4100BE7573 /* DinggoBehindTypo.m in Sources */,
@@ -4316,9 +4396,12 @@
 				6EF0C93D25CD2B7800BE7573 /* DinggoPotatoTypo.m in Sources */,
 				6EC7645E25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m in Sources */,
 				6EF0C7F125CBAE0800BE7573 /* CircleSticker2.m in Sources */,
+				6E5A72E7269192CB00CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
 				6EB2A1E725F383ED009715B4 /* DeepLabV3FP16.mlmodel in Sources */,
+				6E5A72E4269192CB00CD9C84 /* AlbumCategoryCollectionViewCell.m in Sources */,
+				6E5A72D326918D6000CD9C84 /* Reachability.m in Sources */,
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
 				6EBEB6C625C56EA10017C640 /* VlogStudentTypo.m in Sources */,
@@ -4452,6 +4535,7 @@
 				6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */,
 				6E8F9A9825C34582005C8071 /* VerticalHalfRectangle.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
+				6E5A72EF2691944A00CD9C84 /* AlbumManager.m in Sources */,
 				6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */,
 				6ED0AFDE25E51C660027485F /* KidsVlogMainFrame.m in Sources */,
 				6ED0AF6D25E4FAFE0027485F /* MainFrameCollectionViewCell.m in Sources */,
@@ -4701,7 +4785,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
+				MARKETING_VERSION = 1.0.16;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
@@ -4790,7 +4874,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
+				MARKETING_VERSION = 1.0.16;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",

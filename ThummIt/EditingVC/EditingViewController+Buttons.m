@@ -36,38 +36,6 @@
             [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:SaveManager.sharedInstance.currentProject];
             
             [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    
-                    if (success) {
-                        PFObject* exported = [PFObject objectWithClassName:@"exported"];
-                        NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
-                        PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithName:@"test" data:thumbnailBigData contentType:@"png"];
-                        exported[@"exportedThumbnail"] = thumbnailBigFile;
-                        NSString * language = [[NSLocale preferredLanguages] firstObject];
-                        exported[@"contry"] = language;
-                        if (SaveManager.sharedInstance.currentTemplate.templateName) {
-                            exported[@"template"] = SaveManager.sharedInstance.currentTemplate.templateName;
-                        }
-                        if (PFUser.currentUser) {
-                            exported[@"user"] = PFUser.currentUser;
-                        }
-                        [exported saveInBackground];
-                        
-                        if (PFUser.currentUser) {
-                            NSMutableArray *exportedImages = [NSMutableArray array];
-                            [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
-                            [exportedImages addObject:thumbnailBigFile];
-                            [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
-
-                            [PFUser.currentUser saveInBackground];
-                        }
-                        
-                        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-                    } else {
-                        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-                    }
-                });
             }];
 
         });
@@ -119,12 +87,8 @@
     
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
-    self.itemCollectionVC.itemType = PhotoType;
-    [self showItemCollectionVC];
     [self addAlbumVC];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.albumVC showWithAnimation];
-    });
+    [self.albumVC showWithAnimation];
     
     if (!self.recentPHAsset) {
         self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
@@ -136,6 +100,11 @@
     self.currentPhoto = photo;
     [self.view insertSubview:photo.baseView belowSubview:self.gestureView];
     [self didSelectPhotoWithPHAsset:self.recentPHAsset];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.titleLabel.alpha = 0.0;
+        self.categoryButton.alpha = 1.0;
+    }];
     
 }
 
@@ -184,6 +153,11 @@
     }
     [self didSelectPhotoWithPHAsset:self.recentPHAsset];
     
+    [UIView animateWithDuration:0.2 animations:^{
+        self.titleLabel.alpha = 0.0;
+        self.categoryButton.alpha = 1.0;
+    }];
+
 }
 -(void)taskWhenDenied{
     
@@ -460,11 +434,36 @@
     
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY - self.itemCollectionVC.collectionView.frameY);
-    self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY + self.itemCollectionVC.collectionView.frameY);
+    self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
     
     self.albumVC.delegate = self;
-    self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
+//    self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
     
+}
+
+- (IBAction)categoryButtonTapped:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        NSString* title = [sender.titleLabel.text stringByReplacingOccurrencesOfString:@"▾" withString:@"▴"];
+        //blackDownArrow
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.albumVC.categoryContainerTopConstraint.constant = 0;
+            [self.albumVC.view layoutIfNeeded];
+            [self.categoryButton setTitle:title forState:UIControlStateNormal];
+        }];
+    } else {
+        NSString* title = [sender.titleLabel.text stringByReplacingOccurrencesOfString:@"▴" withString:@"▾"];
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.albumVC.categoryContainerTopConstraint.constant = self.albumVC.view.frameHeight;
+            [self.albumVC.view layoutIfNeeded];
+            [self.categoryButton setTitle:title forState:UIControlStateNormal];
+        }];
+    }
+
+
 }
 
 

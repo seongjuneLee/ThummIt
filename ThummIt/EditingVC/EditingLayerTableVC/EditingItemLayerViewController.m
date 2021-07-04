@@ -42,9 +42,6 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     self.sortedItems = [[[SaveManager.sharedInstance.sortedItems reverseObjectEnumerator] allObjects] mutableCopy];
-    for (Item *item in SaveManager.sharedInstance.sortedItems) {
-        NSLog(@"item indexinlayer : %@, item : %@ ",item.indexInLayer,item);
-    }
     return self.sortedItems.count;
 }
 

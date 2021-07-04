@@ -296,9 +296,12 @@ didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
         self.rightItem.alpha =
         self.buttonScrollView.alpha = 1.0;
         self.editingItemLayerVC.view.alpha = 1.0;
+        self.titleLabel.alpha = 1.0;
+        self.categoryButton.alpha = 0.0;
     }];
 
 }
+
 -(void)hideItemsForItemMode{
     
     [UIView animateWithDuration:0.2 animations:^{

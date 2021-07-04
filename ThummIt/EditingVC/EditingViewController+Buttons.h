@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)leftItemTapped:(id)sender;
 - (IBAction)rightItemTapped:(id)sender;
 - (IBAction)photoButtonTapped:(id)sender;
+- (IBAction)categoryButtonTapped:(id)sender;
 
 -(void)photoFrameButtonHoldDown;
 -(void)photoFrameButtonHoldRelease;

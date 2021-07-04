@@ -107,6 +107,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
 @property (weak, nonatomic) IBOutlet UIButton *photoButton;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton;
 
 
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
@@ -125,6 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) NSString *justTyped;
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
 @property(nonatomic, strong) GADInterstitialAdBeta *interstitial;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 -(void)loadItems;
 -(void)showItemsForNormalMode;
